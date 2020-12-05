@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Added some stylings"
+git commit -m "Hide token in .env"
 git push

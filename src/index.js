@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const fs = require('fs')
@@ -6,7 +7,8 @@ const h = require('humanize')
 const c = require('ansi-colors')
 const moment = require('moment')
 const fetch = require('node-fetch')
-const { prefix, token } = require('./config.json')
+const { prefix } = require('./config.json')
+const token = process.env.token
 const server = require('./server')
 let time
 
