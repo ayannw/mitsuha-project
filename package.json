@@ -1,0 +1,21 @@
+{
+  "name": "mitsuha-project",
+  "version": "0.1.0",
+  "description": "Multi-purpose Discord bot.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "pm2-dev src/index.js"
+  },
+  "repository": "https://github.com/theRealAyan/mitsuha-project",
+  "author": "theRealAyan <ayanispro420@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "ansi-colors": "^4.1.1",
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "humanize": "0.0.9",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1"
+  }
+}
