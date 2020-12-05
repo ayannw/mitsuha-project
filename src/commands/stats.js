@@ -13,5 +13,5 @@ exports.run = (client, message, args) => {
 ❯ Total RAM: ${client.stats.memory.total}`)
 		.setColor(rhex())
 
-	message.channel.send(embed)
+	return message.channel.send(embed)
 }

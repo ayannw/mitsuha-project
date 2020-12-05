@@ -15,6 +15,7 @@
     "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "random-hex-color": "^1.0.1",
-    "random-int": "^2.0.1"
+    "random-int": "^2.0.1",
+    "util": "^0.12.3"
   }
 }

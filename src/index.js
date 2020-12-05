@@ -32,7 +32,7 @@ fs.readdir('./events/', (err, files) => {
         files.forEach(file => {
             let eventFunc = require(`./events/${file}`)
             console.log(time + 'loaded ' + c.bgBlue('events/' + file))
-            let eventName = file.split(".")[0];
+            let eventName = file.split(".")[0]
             client.on(eventName, (...args) => eventFunc.run(client, ...args))
     })
 })
@@ -42,6 +42,9 @@ client.on('ready', () => {
 	console.log(time + 'server started, port: ' + server.port)
 	console.log(time + 'logged in as ' + client.user.tag)
 	console.log(time + 'memory: ' + client.stats.memory.used.str + '(' + client.stats.memory.used.percent + ')')
+})
+client.on('message', (msg) => {
+	console.log(time + c.bgMagenta(msg.author.tag) + ' ' + msg.content)
 })
 
 client.login(token)
