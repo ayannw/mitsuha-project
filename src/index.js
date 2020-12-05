@@ -14,23 +14,34 @@ setInterval(() => {
 	time = c.gray(moment().format('HH:mm:ss:SSS '))
 })
 
+client.commands = new Discord.Collection()
+client.events = new Discord.Collection()
+
+fs.readdir('./commands/', (err, files) => {
+    if (err) return console.log(err)
+    files.forEach(file => {
+        if (!file.endsWith(".js")) return;
+        let props = require(`./commands/${file}`)
+        console.log(time + 'loaded ' + c.bgBlue('commands/' + file))
+        let commandName = file.split(".")[0]
+        client.commands.set(commandName, props)
+    })
+})
+fs.readdir('./events/', (err, files) => {
+    if (err) console.log(err)
+        files.forEach(file => {
+            let eventFunc = require(`./events/${file}`)
+            console.log(time + 'loaded ' + c.bgBlue('events/' + file))
+            let eventName = file.split(".")[0];
+            client.on(eventName, (...args) => eventFunc.run(client, ...args))
+    })
+})
+
 client.on('ready', () => {
 	server.run()
-	
-	setInterval(() => {
-		res_start = Date.now()
-		fetch('http://0.0.0.0:6969')
-		res_end = Date.now()
-		res_time = res_end - res_start + 'ms'
-	}, 1000)
 	console.log(time + 'server started, port: ' + server.port)
 	console.log(time + 'logged in as ' + client.user.tag)
-	setInterval(() => {
-		console.log(time + 'memory: ' + client.stats.memory.used.str + '(' + client.stats.memory.used.percent + ') Response time: ' + res_time)
-	}, 1000)
-	setInterval(() => {
-		console.log(time + c.cyan('heartbeat: ' + client.ws.ping))
-	}, 300000)
+	console.log(time + 'memory: ' + client.stats.memory.used.str + '(' + client.stats.memory.used.percent + ')')
 })
 
 client.login(token)

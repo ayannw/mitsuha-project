@@ -1,3 +1,3 @@
 git add --all
-git commit -m "test"
+git commit -m "Added command handler, basic ping command."
 git push

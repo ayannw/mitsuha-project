@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "Multi-purpose Discord bot.",
   "main": "src/index.js",
-  "scripts": {
-    "start": "pm2-dev src/index.js"
-  },
   "repository": "https://github.com/theRealAyan/mitsuha-project",
   "author": "theRealAyan <ayanispro420@gmail.com>",
   "license": "MIT",
