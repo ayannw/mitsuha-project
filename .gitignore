@@ -19,7 +19,7 @@ pids
 lib-cov
 
 # Custom
-config.json
+src/config.json
 push.sh
 
 # Coverage directory used by tools like istanbul
