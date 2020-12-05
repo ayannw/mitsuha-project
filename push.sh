@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Initial commit"
+git commit -m "test"
 git push

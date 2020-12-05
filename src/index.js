@@ -30,7 +30,7 @@ client.on('ready', () => {
 	}, 1000)
 	setInterval(() => {
 		console.log(time + c.cyan('heartbeat: ' + client.ws.ping))
-	}, 6000000)
+	}, 300000)
 })
 
 client.login(token)
