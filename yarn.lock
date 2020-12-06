@@ -153,7 +153,7 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-humanize@0.0.9:
+humanize@^0.0.9:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/humanize/-/humanize-0.0.9.tgz#1994ffaecdfe9c441ed2bdac7452b7bb4c9e41a4"
   integrity sha1-GZT/rs3+nEQe0r2sdFK3u0yeQaQ=

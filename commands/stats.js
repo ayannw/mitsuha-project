@@ -1,5 +1,5 @@
 const Discord = require('discord.js')
-const dVersion = require('../../node_modules/discord.js/package.json').version
+const dVersion = require('/storage/emulated/0/codes/mitsuha-project/node_modules/discord.js').version
 const rhex = require('random-hex-color')
 let embed
 exports.run = (client, message, args) => {

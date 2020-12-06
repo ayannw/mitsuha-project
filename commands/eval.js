@@ -5,7 +5,7 @@ const owner_id = require('../config.json').owner_id
 let code,sTime, eTime, _eTime, _sTime, embed
 exports.run = (client, message, args) => {
 	if(message.author.id != owner_id) return
-	code = message.content.replace('..eval', '')
+	code = message.content.replace('m.eval', '')
 	sTime = Date.now()
 	try {
 		code = util.inspect(eval(code))

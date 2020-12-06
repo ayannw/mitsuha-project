@@ -1,5 +1,0 @@
-{
-	"scripts": {
-		"start": "pm2-dev index.js"
-	}
-}
