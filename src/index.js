@@ -23,8 +23,18 @@ console.log(c.blue(`
 	╹ ╹╹ ╹ ┗━┛┗━┛╹ ╹╹ ╹   ╹  ╹┗╸┗━┛┗━┛┗━╸┗━╸ ╹  ┃
  						   ━┛
 `))
+
 client.commands = new Discord.Collection()
 client.events = new Discord.Collection()
+client.stats = {
+	memory: {
+		total: h.filesize(os.totalmem()),
+		used: {
+			str: h.filesize(process.memoryUsage().heapUsed),
+			percent: String(process.memoryUsage().heapUsed*100/os.totalmem()).substring(0, 4) + '%'
+		}
+	}
+}
 
 fs.readdir('./commands/', (err, files) => {
     if (err) return console.log(err)
@@ -50,12 +60,12 @@ fs.readdir('./events/', (err, files) => {
 client.on('ready', () => {
 	console.log(time + c.bgGreen('starting ...'))
 	server.run()
-	console.log(time + 'server started, port: ' + server.port)
-	console.log(time + 'logged in as ' + client.user.tag)
-	console.log(time + 'memory: ' + client.stats.memory.used.str + '(' + client.stats.memory.used.percent + ')')
+	console.log(time + c.bold('server started, port: ' + server.port))
+	console.log(time + c.bold('logged in as ' + client.user.tag))
+	console.log(time + c.bold('memory: ' + client.stats.memory.used.str + '(' + client.stats.memory.used.percent + ')'))
 })
 client.on('message', (msg) => {
-	console.log(time + c.bgMagenta(msg.author.tag) + ' ' + msg.content)
+	console.log(time + c.bgCyan(msg.author.tag) + ' ' + msg.content)
 })
 
 client.login(token)
