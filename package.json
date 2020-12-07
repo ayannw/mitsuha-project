@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-  	"start": "pm2-dev index.js"
+    "start": "pm2-dev index.js"
   },
   "dependencies": {
     "ansi-colors": "^4.1.1",
@@ -16,7 +16,9 @@
     "dotenv": "^8.2.0",
     "humanize": "^0.0.9",
     "moment": "^2.29.1",
+    "nasa-sdk": "^1.1.10",
     "nekos.life": "^2.0.7",
+    "node-fetch": "^2.6.1",
     "random-hex-color": "^1.0.1",
     "random-int": "^2.0.1",
     "util": "^0.12.3"
