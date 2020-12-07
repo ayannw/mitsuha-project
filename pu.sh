@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Added math command"
+git commit -m "Updated some commands"
 git push

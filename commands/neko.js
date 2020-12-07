@@ -4,6 +4,8 @@ const neko = new n_c()
 const rhex = require('random-hex-color')
 let img, _neko, embed
 exports.run = async (client, message, args) => {
+	if(message.guild.id === '265828729970753537')
+		return message.channel.send('Command has been disabled for this server.')
 	_neko = await neko.sfw.neko()
 	img = _neko.url
 	embed = new Discord.MessageEmbed()
