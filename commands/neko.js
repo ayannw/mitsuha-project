@@ -16,3 +16,4 @@ exports.run = async (client, message, args) => {
 
 	message.channel.send(embed)
 }
+exports.help = 'Loads a random neko image.'

@@ -5,4 +5,3 @@ exports.run = (client, message, args) => {
 	message.channel.send(args)
 	message.delete()
 }
-exports.help = ''

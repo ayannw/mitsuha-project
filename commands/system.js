@@ -15,3 +15,4 @@ exports.run = (client, message, args) => {
 
 	return message.channel.send(embed)
 }
+exports.help = 'System information of my server.'

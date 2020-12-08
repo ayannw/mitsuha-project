@@ -24,3 +24,4 @@ exports.run = (client, message, args) => {
 	message.react('<:green_tick:740860240769056828>')
 	return message.channel.send(embed)
 }
+exports.help = 'Evaluates provided code, developers only.'

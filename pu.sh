@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Add avatar command"
+git commit -m "Update commands"
 git push
