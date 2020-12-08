@@ -1,0 +1,27 @@
+const Discord = require('discord.js')
+const fetch = require('node-fetch')
+let user, data, json, url, embed
+exports.run = async(client, message, args) => {
+	if(args.indexOf(' ') > -1) user = args.replace(/\s+/g, '-')
+	url = 'https://api.github.com/users/' + user
+    data = await fetch(url)
+    json = await data.json()
+
+	if(json.message === 'Not Found') return message.channel.send(`Could not find the user ${user}`)
+	embed = new Discord.MessageEmbed()
+		.setTitle(user, 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png')
+		.setDescription(`> ${json.bio}
+❯ Name: ${json.name}
+❯ Username: ${json.login}
+❯ ID: ${json.id}
+❯ Public repositories: ${json.public_repos}
+❯ Public Gists: ${json.public_gists}
+❯ Followers: ${json.followers}
+❯ Following: ${json.following}`)
+		.setThumbnail(json.avatar_url)
+
+
+	message.channel.send(embed)
+}
+exports.help = 'Fetch someone\'s GitHub profile data.'
+
