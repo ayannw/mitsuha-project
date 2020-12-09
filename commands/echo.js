@@ -7,5 +7,5 @@ module.exports = {
   	message.channel.send(args)
   	message.delete()
   },
-  help: 'Repeats text, owner-only'
+  help: 'Repeats text, owner-only.'
 }

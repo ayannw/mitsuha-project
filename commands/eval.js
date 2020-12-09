@@ -27,5 +27,5 @@ module.exports = {
   	message.react('<:green_tick:740860240769056828>')
   	return message.channel.send(embed)
   },
-  help : 'Evaluates provided code, developers only.'
+  help : 'Evaluates provided code, owner only.'
 }

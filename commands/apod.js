@@ -1,5 +1,6 @@
+require('dotenv').config()
 const fetch = require('node-fetch')
-const url = 'https://api.nasa.gov/planetary/apod?api_key=paHo2yhgUV2jofm0W5kG4jb0nEPhE3mCKcfBrj5w'
+const url = "https://api.nasa.gov/planetary/apod?api_key=paHo2yhgUV2jofm0W5kG4jb0nEPhE3mCKcfBrj5w"
 const Discord = require('discord.js')
 let data, json, embed
 
