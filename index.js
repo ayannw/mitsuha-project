@@ -24,15 +24,15 @@ console.log(c.blue(`
 
 client.commands = new Discord.Collection()
 client.events = new Discord.Collection()
-client.stats = {
-	memory: {
-		total: h.filesize(os.totalmem()),
-		used: {
-			str: h.filesize(process.memoryUsage().heapUsed),
-			percent: String(process.memoryUsage().heapUsed*100/os.totalmem()).substring(0, 4) + '%'
-		}
-	}
-}
+client.stats = {}
+client.stats.memory = {}
+client.stats.memory.used = {}
+client.stats.memory.total = h.filesize(os.totalmem())
+setInterval(() => {
+	client.stats.memory.used.str = h.filesize(process.memoryUsage().heapUsed)
+	client.stats.memory.used.percent = String(process.memoryUsage().heapUsed*100/os.totalmem()).substring(0, 4) + '%'
+}, 1000)
+
 
 fs.readdir('./commands/', (err, files) => {
     if (err) return console.log(err)

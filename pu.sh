@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Add help command"
+git commit -m "Update `client.memory`"
 git push
