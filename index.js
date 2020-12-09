@@ -1,3 +1,4 @@
+require('dotenv').config()
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const fs = require('fs')
@@ -6,9 +7,8 @@ const h = require('humanize')
 const c = require('ansi-colors')
 const moment = require('moment')
 const { prefix } = require('./config.json')
-const token = require('./exporter').token
+const token = process.env.token
 const server = require('./server')
-let time
 
 setInterval(() => {
     time = c.gray(moment().format('HH:mm:ss:SSS '))

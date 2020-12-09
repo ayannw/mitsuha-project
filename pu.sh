@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Add support command"
+git commit -m "Updated commands"
 git push
