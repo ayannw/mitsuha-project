@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Update fix issue with help command"
+git commit -m "Add sample files"
 git push
