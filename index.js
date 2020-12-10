@@ -62,10 +62,10 @@ client.on('ready', () => {
 	console.log(time + c.bold('server started, port: ' + server.port))
 	console.log(time + c.bold('logged in as ' + client.user.tag))
 	setInterval(() => {
-			client.user.setActivity('with ' 
-				+ client.users.cache.size 
-				+ ' users, m.help for help', {
-				type: 'PLAYING'
+			client.user.setActivity(
+				client.users.cache.size 
+				+ ' users', {
+				type: 'WATCHING'
 				}
 			)}, 420000)
 })

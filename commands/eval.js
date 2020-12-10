@@ -1,14 +1,14 @@
 const Discord = require('discord.js')
 const util = require('util')
 const fs = require('fs')
-const owner_id = require('../config.json').owner_id
+const { owner_id, prefix } = require('../config.json')
 let code,sTime, eTime, _eTime, _sTime, embed
 
 module.exports = {
   name : 'eval',
   run : (client, message, args) => {
   	if(message.author.id != owner_id) return
-  	code = message.content.replace('m.eval', '')
+  	code = message.content.replace(prefix + 'eval', '')
   	sTime = Date.now()
   	try {
   		code = util.inspect(eval(code))
@@ -27,5 +27,5 @@ module.exports = {
   	message.react('<:green_tick:740860240769056828>')
   	return message.channel.send(embed)
   },
-  help : 'Evaluates provided code, owner only.'
+  help : 'Evaluates provided code, owner-only.'
 }
