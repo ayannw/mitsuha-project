@@ -6,7 +6,7 @@ const os = require('os')
 const h = require('humanize')
 const c = require('ansi-colors')
 const moment = require('moment')
-const { prefix } = require('./config.json')
+const { prefix , owner_id } = require('./config.json')
 const token = process.env.token
 const server = require('./server')
 
@@ -24,6 +24,7 @@ console.log(c.blue(`
 
 client.commands = new Discord.Collection()
 client.events = new Discord.Collection()
+client.owner = owner_id
 client.stats = {}
 client.stats.memory = {}
 client.stats.memory.used = {}
@@ -31,7 +32,7 @@ client.stats.memory.total = h.filesize(os.totalmem())
 setInterval(() => {
 	client.stats.memory.used.str = h.filesize(process.memoryUsage().heapUsed)
 	client.stats.memory.used.percent = String(process.memoryUsage().heapUsed*100/os.totalmem()).substring(0, 4) + '%'
-}, 1000)
+}, 42000)
 
 
 fs.readdir('./commands/', (err, files) => {
@@ -60,7 +61,13 @@ client.on('ready', () => {
 	server.run()
 	console.log(time + c.bold('server started, port: ' + server.port))
 	console.log(time + c.bold('logged in as ' + client.user.tag))
-	console.log(time + c.bold('memory: ' + client.stats.memory.used.str + '(' + client.stats.memory.used.percent + ')'))
+	setInterval(() => {
+			client.user.setActivity('with ' 
+				+ client.users.cache.size 
+				+ ' users, m.help for help', {
+				type: 'PLAYING'
+				}
+			)}, 420000)
 })
 client.on('message', (msg) => {
 	console.log(time + c.bgCyan(msg.author.tag) + ' ' + msg.content)

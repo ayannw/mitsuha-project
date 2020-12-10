@@ -14,7 +14,7 @@ module.exports = {
 			.setDescription(list)
 			.setColor(rhex())
 			.setFooter('Requested by ' + message.author.tag, message.author.avatarURL())
-			
+		list = ''
 		message.channel.send(embed)
 	},
 	help : 'Displays a list of all commands.'

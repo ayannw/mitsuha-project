@@ -11,8 +11,8 @@ module.exports = {
 ❯ Guilds: ${client.guilds.cache.size}
 ❯ Discord.js: ${dVersion}
 ❯ Node.js: ${process.version}
-❯ RAM used: ${client.stats.memory.used.str + '(' +  client.stats.memory.used.percent + ')'}
-❯ Total RAM: ${client.stats.memory.total}`)
+❯ Memory used: ${client.stats.memory.used.str + '(' +  client.stats.memory.used.percent + ')'}
+❯ Total memory: ${client.stats.memory.total}`)
   		.setColor(rhex())
   
   	return message.channel.send(embed)
