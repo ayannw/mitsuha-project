@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Add anime command"
+git commit -m "Update package.json"
 git push
