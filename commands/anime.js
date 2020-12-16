@@ -2,11 +2,12 @@ const Discord = require('discord.js')
 const rhex = require('random-hex-color')
 const fetch = require('node-fetch')
 const baseURL = 'https://kitsu.io/api/edge/anime?filter[text]='
-let embed, url, data, json, anime
+let e, s, t, embed, url, data, json, anime
 
 module.exports = {
 	name: 'anime',
 	run : async (client, message, args) => {
+		s = Date.now()
 		if(args.join(' ').startsWith(' ')) args[0] = ''
 		if(!args) return message.channel.send('Please input an anime name.')
 
@@ -16,7 +17,9 @@ module.exports = {
 				url = baseURL + args
 				data = await fetch(url)
 				json = await data.json()
-			
+
+			e = Date.now()
+			t = e - s
 				if(json.data.length == 0) return message.channel.send('Could not find the anime.')
 
 				anime = json.data[0].attributes
@@ -32,7 +35,7 @@ module.exports = {
 ❯ **Decription:** ${anime.description}
 ❯ **Average rating:** ${anime.averageRating}
 ❯ **Popularity rank:** ${anime.popularityRank}`)
-					.setFooter('Powered by Kitsu', 'https://avatars0.githubusercontent.com/u/7648832?s=280&v=4')
+					.setFooter('Powered by Kitsu | Took ' + t + 'ms to fetch', 'https://avatars0.githubusercontent.com/u/7648832?s=280&v=4')
 					.setColor(rhex())
 					.setURL('https://kitsu.io/anime/' + anime.slug)
 			} catch {
