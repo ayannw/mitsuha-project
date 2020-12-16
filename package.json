@@ -9,7 +9,8 @@
   "private": false,
   "scripts": {
     "start": "node index.js",
-    "test": "pm2-dev index.js"
+    "test": "pm2-dev index.js",
+    "dock": "pm2-docker index.js"
   },
   "dependencies": {
     "ansi-colors": "^4.1.1",

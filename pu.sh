@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Update package.json"
+git commit -m "Update activity logger"
 git push

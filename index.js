@@ -9,11 +9,13 @@ const moment = require('moment')
 const { prefix , owner_id } = require('./config.json')
 const token = process.env.token
 const server = require('./server')
+const logger = require('./logger')
 
 setInterval(() => {
     time = c.gray(moment().format('HH:mm:ss:SSS '))
 })
 
+logger.warn('starting..')
 console.log(c.blue(`
 ┏━
 ┃	┏┳┓╻╺┳╸┏━┓╻ ╻╻ ╻┏━┓   ┏━┓┏━┓┏━┓ ┏┓┏━╸┏━╸╺┳╸
@@ -37,21 +39,21 @@ setInterval(() => {
 
 fs.readdir('./commands/', (err, files) => {
     if (err) return console.log(err)
-    console.log(time + c.bgCyanBright('loading commands ...'))
+    logger.warn(c.bgCyanBright('loading commands ...'))
     files.forEach(file => {
         if (!file.endsWith(".js")) return;
         let props = require(`./commands/${file}`)
-        console.log(time + c.bgBlue('loaded ' + 'commands/' + file))
+        logger.success(c.bgBlue('loaded ' + 'commands/' + file))
         let commandName = file.split(".")[0]
         client.commands.set(commandName, props)
     })
 })
 fs.readdir('./events/', (err, files) => {
     if (err) console.log(err)
-    console.log(time + c.bgCyanBright('loading events ...'))
+    logger.warn(c.bgCyanBright('loading events ...'))
     files.forEach(file => {
     	let eventFunc = require(`./events/${file}`)
-        console.log(time + c.bgBlue('loaded ' + 'events/' + file))
+        logger.success(c.bgBlue('loaded ' + 'events/' + file))
 		let eventName = file.split(".")[0]
         client.on(eventName, (...args) => eventFunc.run(client, ...args))
     })
@@ -70,7 +72,7 @@ client.on('ready', () => {
 			)}, 420000)
 })
 client.on('message', (msg) => {
-	console.log(time + c.bgCyan(msg.author.tag) + ' ' + msg.content)
+	logger.log(c.bgCyan(msg.author.tag) + ' ' + msg.content)
 })
 
 client.login(token)
