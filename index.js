@@ -34,7 +34,7 @@ client.stats.memory.total = h.filesize(os.totalmem())
 setInterval(() => {
 	client.stats.memory.used.str = h.filesize(process.memoryUsage().heapUsed)
 	client.stats.memory.used.percent = String(process.memoryUsage().heapUsed*100/os.totalmem()).substring(0, 4) + '%'
-}, 42000)
+}, 10000)
 
 
 fs.readdir('./commands/', (err, files) => {
@@ -59,10 +59,10 @@ fs.readdir('./events/', (err, files) => {
     })
 })
 client.on('ready', () => {
-	console.log(time + c.bgGreen('starting ...'))
+	logger.warn(c.bgGreen('starting ...'))
 	server.run()
-	console.log(time + c.bold('server started, port: ' + server.port))
-	console.log(time + c.bold('logged in as ' + client.user.tag))
+	logger.success(c.bold('server started, port: ' + server.port))
+	logger.success(c.bold('logged in as ' + client.user.tag))
 	setInterval(() => {
 			client.user.setActivity(
 				client.users.cache.size 
@@ -76,3 +76,4 @@ client.on('message', (msg) => {
 })
 
 client.login(token)
+

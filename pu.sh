@@ -1,3 +1,3 @@
 git add --all
-git commit -m "Update activity logger"
+git commit -m "Update client.memoryUsage interval"
 git push
