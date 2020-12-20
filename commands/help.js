@@ -1,5 +1,4 @@
-const Discord = require('discord.js')
-const rhex = require('random-hex-color')
+const Discord = require('discord.js') 
 let list = ''
 let embed = ''
 
@@ -12,7 +11,7 @@ module.exports = {
 		embed = new Discord.MessageEmbed()
 			.setAuthor('Displaying help', client.user.avatarURL())
 			.setDescription(list)
-			.setColor(rhex())
+			.setColor('RANDOM')
 			.setFooter('Requested by ' + message.author.tag, message.author.avatarURL())
 		list = ''
 		message.channel.send(embed)

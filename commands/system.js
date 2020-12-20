@@ -1,5 +1,4 @@
 const Discord = require('discord.js')
-const rhex = require('random-hex-color')
 const os = require('os')
 const filesize = require('humanize').filesize
 let embed
@@ -13,7 +12,7 @@ module.exports = {
 ❯ Total RAM : ${filesize(os.totalmem())}
 ❯ Used RAM : ${filesize(os.totalmem() - os.freemem())}
 ❯ Free RAM : ${filesize(os.freemem)}`)
-  		.setColor(rhex())
+  		.setColor('RANDOM')
   
   	return message.channel.send(embed)
   },

@@ -1,5 +1,4 @@
 const Discord = require('discord.js')
-const rhex = require('random-hex-color')
 const fetch = require('node-fetch')
 const baseURL = 'https://kitsu.io/api/edge/anime?filter[text]='
 let e, s, t, embed, url, data, json, anime
@@ -35,8 +34,8 @@ module.exports = {
 ❯ **Decription:** ${anime.description}
 ❯ **Average rating:** ${anime.averageRating}
 ❯ **Popularity rank:** ${anime.popularityRank}`)
-					.setFooter('Powered by Kitsu | Took ' + t + 'ms to fetch', 'https://avatars0.githubusercontent.com/u/7648832?s=280&v=4')
-					.setColor(rhex())
+					.setFooter('Kitsu.io | ' + t + 'ms', 'https://avatars0.githubusercontent.com/u/7648832?s=280&v=4')
+					.setColor("RANDOM")
 					.setURL('https://kitsu.io/anime/' + anime.slug)
 			} catch {
 				return message.channel.send('An unexpected error popped up!')

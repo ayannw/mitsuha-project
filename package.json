@@ -16,14 +16,14 @@
     "ansi-colors": "^4.1.1",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "humanize": "^0.0.9",
+    "mathjs": "^8.1.0",
     "moment": "^2.29.1",
-    "nasa-sdk": "^1.1.10",
     "nekos.life": "^2.0.7",
     "node-fetch": "^2.6.1",
     "random-hex-color": "^1.0.1",
     "random-int": "^2.0.1",
-    "util": "^0.12.3",
-    "mathjs": "^8.1.0"
+    "util": "^0.12.3"
   }
 }

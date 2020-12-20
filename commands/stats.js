@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
-const dVersion = Discord.version
-const rhex = require('random-hex-color')
+const dVersion = Discord.version 
 let embed
 module.exports = {
   name : 'stats',
@@ -13,7 +12,7 @@ module.exports = {
 ❯ Node.js: ${process.version}
 ❯ Memory used: ${client.stats.memory.used.str + '(' +  client.stats.memory.used.percent + ')'}
 ❯ Total memory: ${client.stats.memory.total}`)
-  		.setColor(rhex())
+  		.setColor('RANDOM')
   
   	return message.channel.send(embed)
   },

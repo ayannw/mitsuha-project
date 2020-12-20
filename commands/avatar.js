@@ -1,8 +1,6 @@
 const Discord = require('discord.js')
 const rhex = require('random-hex-color')
 let user, embed
-embed = new Discord.MessageEmbed()
-			.setColor(rhex())
 
 module.exports = {
   name : 'avatar',
@@ -14,7 +12,7 @@ module.exports = {
   	embed = new Discord.MessageEmbed()
 			.setTitle(user.tag)
 			.setImage(user.avatarURL({ dynamic: true, size: 2048 }))
-			.setColor(rhex())
+			.setColor('RANDOM')
 			.setTimestamp()
   	message.channel.send(embed)
   },
