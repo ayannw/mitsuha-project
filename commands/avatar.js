@@ -1,5 +1,4 @@
-const Discord = require('discord.js')
-const rhex = require('random-hex-color')
+const Discord = require('discord.js') 
 let user, embed
 
 module.exports = {

@@ -1,9 +1,5 @@
 const Discord = require('discord.js')
-try {
-  math = require('/data/data/com.termux/files/home/node_modules/mathjs')
-} catch {
-  math = require('mathjs')
-}
+const math = require('mathjs')
 let eTime, sTime, time, out, embed
 module.exports = {
   name: 'math',
