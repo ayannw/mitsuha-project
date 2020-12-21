@@ -1,16 +1,18 @@
 const { prefix } = require('../config.json')
+const { error } = require('../logger')
 
 exports.run = async(client, message) => {
 	if (message.author.bot) return;
-	if (message.content.startsWith(prefix)) {
-    
-	let messageArray = message.content.split(" "),
-    	cmd = messageArray[0],
-    	args = messageArray.slice(1),
-    	commandfile = client.commands.get(cmd.slice(prefix.length)) 
-    		|| client.aliases.get(cmd.slice(prefix.length))
-  
+
+	main = String(message.content.split(' ')[0]).toLowerCase()
+	cmd = main.split(prefix)[1]
+	args = message.content.split(main)[1]
+	commandfile = client.commands.get(cmd) 
+    			|| client.aliases.get(cmd)
 	if(!commandfile) return
-    commandfile.run(client,message,args)
-  	}
+	try {
+		commandfile.run(client, message, args)
+	} catch(err){
+		error(err)
+	}
 }
