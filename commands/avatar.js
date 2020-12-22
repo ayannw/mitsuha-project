@@ -15,5 +15,6 @@ module.exports = {
 			.setTimestamp()
   	message.channel.send(embed)
   },
-  help : 'Display someone\'s avatar.'
+  help : 'Display someone\'s avatar.',
+  alias : 'av'
 }
