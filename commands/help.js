@@ -6,7 +6,7 @@ module.exports = {
 	name : 'help',
 	run : (client, message, args) => {
 		client.commands.forEach(cmd => {
-			list += '❯ `' + cmd.name + '` – '+ cmd.help + `\n`
+			list += '❯ `' + cmd.name +  '` – '+ cmd.help + `\n`
 		})
 		embed = new Discord.MessageEmbed()
 			.setAuthor('Displaying help', client.user.avatarURL())

@@ -1,23 +1,13 @@
+const Discord = require('discord.js')
 const { prefix } = require('../config.json')
-const { error, warn } = require('../logger')
-
 exports.run = async(client, message) => {
-	if (message.author.bot) return
-	try {
-		main = String(message.content.split(' ')[0]).toLowerCase()
-		cmd = main.split(prefix)[1]
-		args = message.content.split(main)[1]
-		//commandfile = client.commands.get(cmd)
-		client.commands.forEach(c => {
-			if(cmd === c.name || cmd === c.alias){
-				try {
-					c.run(client, message, args)
-				} catch(err){
-					error(err)
-				}
-			}
-		})
-	} catch {
-		warn('new message does not start with prefix')
-	}
+    if (message.author.bot) return
+    if (message.content.startsWith(prefix)) {
+    	let messageArray = message.content.split(' '),
+    	cmd = messageArray[0],
+	    args = messageArray.slice(1),
+    	commandfile = client.commands.get(cmd.slice(prefix.length))
+		if(!commandfile) return;
+    	return commandfile.run(client, message, args)
+  	}
 }
