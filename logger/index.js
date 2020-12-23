@@ -3,7 +3,7 @@ const colors = require('ansi-colors')
 
 exports.log = (text) => {
     return console.log(
-`${colors.gray(moment().format('HH:mm:ss:SSS'))} [ log     ] ${text}`
+`${colors.gray(moment().format('HH:mm:ss:SSS'))} [ info     ] ${text}`
     )
 }
 exports.success = (text) => {
