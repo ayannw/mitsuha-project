@@ -1,30 +1,18 @@
 {
-  "name": "mitsuha-project",
-  "version": "1.0.0",
-  "description": "Multi-purpose Discord bot.",
-  "main": "index.js",
-  "repository": "https://github.com/theRealAyan/mitsuha-project",
-  "author": "theRealAyan <ayanispro420@gmail.com>",
-  "license": "MIT",
-  "private": false,
+  "name": "yotsuha",
+  "version": "6.96.9",
+  "description": "bla",
+  "main": "src/main.ts",
   "scripts": {
-    "start": "node index.js",
-    "test": "pm2-dev index.js",
-    "dock": "pm2-docker index.js"
+    "test": "nodemon src/main.ts"
   },
+  "repository": "https://github.com/theRealAyan/yotsuha",
+  "author": "theRealAyan <ayanispro420@gmail.com>",
+  "license": "MILT",
+  "private": null,
   "dependencies": {
-    "ansi-colors": "^4.1.1",
-    "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "humanize": "^0.0.9",
-    "mathjs": "^8.1.0",
-    "moment": "^2.29.1",
-    "nekos.life": "^2.0.7",
-    "node-fetch": "^2.6.1",
-    "random-hex-color": "^1.0.1",
-    "random-int": "^2.0.1",
-    "reconlx": "^1.0.53",
-    "util": "^0.12.3"
+    "@types/node": "^14.14.20",
+    "colorlogs": "git+https://github.com/theRealAyan/colorlogs",
+    "discord.js": "discordjs/discord.js"
   }
 }
