@@ -26,10 +26,11 @@ client.on('message', (message: Message): void => {
 	try {
     	return commands.get(cmd).cmd.run(client, message, args);
     } catch(err) {
-    	logger.error('unable to find command: ' + cmd)
+      logger.error(err);
+    	logger.error('unable to find/run command: ' + cmd);
     };
   };
-})
+});
 
 client.once('ready', (): void => {
   logger.success(client.user.tag + ' is online');
