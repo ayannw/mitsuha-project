@@ -7,6 +7,7 @@ interface Run {
 export interface Command {
 	name: string,
 	run: Run,
+	cat?: string,
 	help?: string,
 	aliases?: Array<string>,
 	ownerOnly?: boolean
