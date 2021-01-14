@@ -9,6 +9,6 @@ export interface Command {
 	run: Run,
 	cat?: string,
 	help?: string,
-	aliases?: Array<string>,
+	alias?: string,
 	ownerOnly?: boolean
 };
