@@ -1,9 +1,9 @@
-const chatbot = require('reconlx').chatBot
+const fetch = require('node-fetch')
 
 module.exports = (message) => {
-  if(!messsage.guild){
-    return chatbot(message, message.content)
-  } else {
-    return
-  }
+  fetch(`https://pepee.ga/chat?message=${message.content}`)
+    .then(res => res.json())
+    .then(async json => {
+      return message.reply(json.response)
+  })
 }

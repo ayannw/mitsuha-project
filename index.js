@@ -72,7 +72,7 @@ client.on('ready', () => {
 			)}, 420000)
 })
 client.on('message', (msg) => {
-	logger.log(c.bgCyan(msg.author.tag) + ' ' + msg.content)
+	logger.log(c.bgCyan(`${msg.channel.name}>${msg.author.tag}`) + '>' + msg.content)
 })
 
 client.login(token)
