@@ -20,7 +20,11 @@ client.on('message', (message: Message): void => {
     const cmd: string = arr[0].toLowerCase().split(config.prefix)[1];
     const args: Array<string> = arr.slice(1);
 
-    return commands.get(cmd).cmd.run(client, message, args);
+	try {
+    	return commands.get(cmd).cmd.run(client, message, args);
+    } catch(err) {
+    	logger.error('unable to find command: ' + cmd)
+    };
   };
 })
 
