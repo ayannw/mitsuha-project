@@ -10,7 +10,7 @@ export const cmd: Command = {
     const users: number = client.users.cache.size;
     const channels: number = client.channels.cache.size;
     const guilds: number = client.guilds.cache.size;
-    const memoryUsed: string = `${memoryUsage().heapUsed / 1048576}`.substring(0, 5) + 'mb';
+    const memoryUsed: string = `${memoryUsage().heapUsed / 1048576}`.substring(0, 5) + 'MB';
     const description: string = `• Statistics:
 ❯ Users: ${users}
 ❯ Channels: ${channels}
@@ -27,5 +27,6 @@ export const cmd: Command = {
     return message.channel.send(embed);
   },
   help: 'My statistics.',
+  alias: 'stat',
   cat: 'System'
 };
