@@ -4,6 +4,7 @@ import * as logger from 'colorlogs';
 import * as config from './config';
 import { Client, Message } from 'discord.js';
 import { commands } from './handlers/command';
+import { bgBlue, bgGreen } from 'colorette';
 
 const client: Client = new Client();
 
@@ -14,6 +15,8 @@ async function start(): Promise<void> {
 };
 
 client.on('message', (message: Message): void => {
+  if(!message.channel) return;
+  logger.info(bgBlue(message.guild.name) + '>' + bgGreen(message.author.tag) + '>' + message.content);
   if(!message.content.startsWith(config.prefix)){ return; };
   if(message.content.startsWith(config.prefix)){
     const arr: Array<string> = message.content.split(' ');
