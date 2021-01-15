@@ -1,7 +1,7 @@
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { version as dVersion } from 'discord.js'
 import { memoryUsage } from 'process';
-import { version, name } from '../config'; 
+import { version, name, tscV, instance } from '../config'; 
 import { Command } from '../typings/Command';
 
 export const cmd: Command = {
@@ -17,6 +17,7 @@ export const cmd: Command = {
 ❯ Guilds: ${guilds}
 ❯ Discord.js version: ${dVersion}
 ❯ Node.js version: ${process.version}
+❯ Typescript version: ${tscV}
 ❯ Memory used: ${memoryUsed}`;
     const embed: MessageEmbed = new MessageEmbed()
       .setColor('RANDOM')
@@ -24,6 +25,10 @@ export const cmd: Command = {
       .setDescription(description)
       .setTimestamp();
 
+    if(instance.dev) {
+    	embed.setFooter('Development instance');
+    }
+    
     return message.channel.send(embed);
   },
   help: 'My statistics.',

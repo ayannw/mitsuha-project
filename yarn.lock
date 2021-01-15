@@ -90,6 +90,11 @@ node-fetch@^2.6.1:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
+performance-now@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+  integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
+
 prism-media@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/prism-media/-/prism-media-1.2.3.tgz#37bbb11726674a73fe56a2df4de76aa91d2141b7"
@@ -99,6 +104,11 @@ tweetnacl@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
   integrity sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
+
+typescript@^4.2.0-dev.20210114:
+  version "4.2.0-dev.20210114"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.0-dev.20210114.tgz#f05ffc4f3d3e3492a23583c5691ebfe8df649db3"
+  integrity sha512-Ia1jESyGM1YOSpc2nA4N+6XY1uPsycVmSauh6c5IkGLGMW+ygGnAF0gvm8BXkGSZnO5dp5+R/6CQLGdawAbv5Q==
 
 ws@^7.3.1:
   version "7.4.1"
