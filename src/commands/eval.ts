@@ -42,5 +42,6 @@ export const cmd = {
 
 		return message.channel.send(m);
 	},
-	alias: 'ev'
+	alias: 'ev',
+	ownerOnly: true
 };
