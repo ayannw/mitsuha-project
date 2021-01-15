@@ -24,7 +24,11 @@ client.on('message', (message: Message): void => {
     const args: Array<string> = arr.slice(1);
 
 	try {
-    	return commands.get(cmd).cmd.run(client, message, args);
+    	commands.forEach(command => {
+    		if(command.cmd.name == cmd || command.cmd.alias == cmd){
+    			return commands.get(command.cmd.name).cmd.run(client, message, args)
+    		};
+    	});
     } catch(err) {
       logger.error(err);
     	logger.error('unable to find/run command: ' + cmd);
