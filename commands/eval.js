@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const util = require('util')
 const fs = require('fs')
 const { owner_id, prefix } = require('../config.json')
-let code,sTime, eTime, _eTime, _sTime, embed
+let code,sTime, eTime, embed
 
 module.exports = {
   name : 'eval',
@@ -19,7 +19,7 @@ module.exports = {
   	}
   	eTime = Date.now()
 	
-  	time = `${eTime - sTime}ms`
+  	const time = `${eTime - sTime}ms`
   	embed = new Discord.MessageEmbed()
 	  	.addField('Output : ', '```js\n'  + code + '```')
   		.addField('_ _', '`' + '⏱ time taken: ' + time + '`')
