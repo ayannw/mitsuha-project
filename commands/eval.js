@@ -1,6 +1,5 @@
 const Discord = require('discord.js')
 const util = require('util')
-const fs = require('fs')
 const { owner_id, prefix } = require('../config.json')
 let code,sTime, eTime, embed
 
