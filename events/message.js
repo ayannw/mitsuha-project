@@ -1,4 +1,3 @@
-const Discord = require('discord.js')
 const { prefix } = require('../config.json')
 const chatbot = require('reconlx').chatBot
 exports.run = async(client, message) => {
