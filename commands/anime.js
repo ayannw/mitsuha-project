@@ -9,8 +9,7 @@ module.exports = {
 		s = Date.now()
 		if(args.join(' ').startsWith(' ')) args[0] = ''
 		if(!args) return message.channel.send('Please input an anime name.')
-
-		if(args){
+		
 			try {
 				args = encodeURI(args.join(' '))
 				url = baseURL + args
@@ -41,7 +40,6 @@ module.exports = {
 				return message.channel.send('An unexpected error popped up!')
 			}
 			return message.channel.send(embed)
-		}
 	},
 	help : 'Shows info about an anime.'
 }
