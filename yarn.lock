@@ -1122,10 +1122,10 @@ readable-stream@^2.3.5:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-reconlx@^1.0.53:
-  version "1.0.53"
-  resolved "https://registry.yarnpkg.com/reconlx/-/reconlx-1.0.53.tgz#1cf88ba80040777d5f46d0fbfe8ec4c4d67a3a6b"
-  integrity sha512-rtcKpg7aSBK5KYNEfIrFLxETO+RyFvJ9pOeI+fe7sqagtEGxjw7zBrmQ8H35hk7UJ8gz+knZ8dBMAmNCrRHh6A==
+reconlx@^1.0.73:
+  version "1.0.73"
+  resolved "https://registry.yarnpkg.com/reconlx/-/reconlx-1.0.73.tgz#ae99d4180bd8d1971981fa92e9dab1a9274a814c"
+  integrity sha512-OxHBB57h7MKbeYAA6UaQz/sbQIrEFTQJF7PnJgorEfxK7W/cO4AyYlLqHeILTyt6bvJGlPIwhepmMGG1iJ3Igw==
   dependencies:
     discord.js "^12.4.1"
     jsdom "^16.4.0"
