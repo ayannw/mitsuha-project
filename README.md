@@ -1,8 +1,15 @@
-# Mitsuha-project
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Yet another multi-purpose Discord bot made with Discord.js.
+<div align="center">
 
-> ### Disclaimer, 
-> This project contains nuts, feel free to fix them.
+
+# Mitsuha
+
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/theRealAyan/mitsuha-project.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/theRealAyan/mitsuha-project/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/theRealAyan/mitsuha-project.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/theRealAyan/mitsuha-project/context:javascript)
+
+</div>
+
+
+
+Multi-purpose Discord bot made with Discord.js.
