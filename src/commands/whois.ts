@@ -1,14 +1,16 @@
 import { Command } from '../typings/Command';
-import { Client, Message, User, GuildMember, MessageEmbed } from 'discord.js';
+import { Client, Message, User, MessageEmbed } from 'discord.js';
 import { getMember } from '../tools/getMember';
 
 export const cmd: Command = {
   name: 'whois',
   run: async (client: Client, message: Message, args: Array<any>): Promise<Message> => {
-  const member: GuildMember = getMember(message, args);
+  const member: any = getMember(message, args);
+
+  if(!member) return message.channel.send('Could not find the user.');
   const user: User = client.users.cache.get(member.id);
   const embed: MessageEmbed = new MessageEmbed()
-  	.setColor('RANDOM')
+  	.setColor(member.disp)
   	.setAuthor(user.tag, user.displayAvatarURL({ dynamic: true }))
   	.setThumbnail(user.displayAvatarURL({ dynamic: true }))
   	.setDescription(`• user Information
@@ -24,5 +26,6 @@ export const cmd: Command = {
     return await message.channel.send(embed);
   },
   help: 'Shows information about a Discord user/guild user.',
-  alias: 'userinfo'
+  alias: 'userinfo',
+  cat: 'Tools'
 };
