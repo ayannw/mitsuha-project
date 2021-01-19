@@ -10,5 +10,8 @@
 
 Multi-purpose Discord bot made with Discord.js.
 
+[Invite to server](https://discord.com/oauth2/authorize?client_id=749640517549293729&permissions=205323366&scope=bot) |
+[Join support server](https://discord.gg/6Pwak89TTg)
+
 </div>
 
