@@ -33,11 +33,11 @@ export const cmd = {
 		
 		const eTime: number = new Date().getTime();
 
-		let m: string = '```ts\n// Discord.js version: '
-			+ dV + '\n// Node.js version: '
-			+ version + '\n// Typescript version: '
-			+ tscV + '\n\n//— Output: \n\n'
-			+ output + '\n\n//— Done in '
+		let m: string = '```ts\nDiscord.js version: '
+			+ dV + '\nNode.js version: '
+			+ version + '\nTypescript version: '
+			+ tscV + '\n\n— Output: \n\n'
+			+ output + '\n\n— Done in '
 			+ String(eTime - sTime) + 'ms```';
 		if(output.length > 2000) {
 			m = 'Output too long.';
