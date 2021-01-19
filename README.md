@@ -2,6 +2,7 @@
 
 <div align="center">
 
+<img src="https://cdn.discordapp.com/avatars/749640517549293729/7e7e4114a2a23227d297d858cd6a5b47.png?size=2048" height="150" width="150"/>
 
 # Mitsuha
 
