@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nodemon src/main.ts",
     "build": "tsc -b",
-    "start": "yarn build && yarn start"
+    "start": "yarn build && node build/main"
   },
   "repository": "https://github.com/theRealAyan/yotsuha",
   "author": "theRealAyan <ayanispro420@gmail.com>",

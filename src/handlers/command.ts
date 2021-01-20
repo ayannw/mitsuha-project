@@ -4,8 +4,9 @@ import { Collection } from 'discord.js';
 import { bgCyan } from 'colorette';
 
 let cmds: Collection<string, any> = new Collection();
+let path: string = process.cwd() + '/build/commands/';
 
-fs.readdir('./src/commands/', (err, files): void => {
+fs.readdir(path, (err, files): void => {
     if (err) return console.log(err);
     logger.warn('loading commands ...');
     files.forEach(file => {
