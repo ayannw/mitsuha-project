@@ -17,4 +17,4 @@ fs.readdir(path, (err, files): void => {
     });
 });
 
-export let commands = cmds;
+export const commands = cmds;
