@@ -1,15 +1,17 @@
 {
   "name": "Mitsuha",
-  "version": "6.96.9",
-  "description": "bla",
+  "version": "0.1.2",
+  "description": "Multi-purpose Discord bot.",
   "main": "src/main.ts",
   "scripts": {
-    "test": "nodemon src/main.ts"
+    "test": "nodemon src/main.ts",
+    "build": "tsc -b",
+    "start": "yarn build && yarn start"
   },
   "repository": "https://github.com/theRealAyan/yotsuha",
   "author": "theRealAyan <ayanispro420@gmail.com>",
   "license": "MIT",
-  "private": null,
+  "private": "false",
   "dependencies": {
     "@types/node": "^14.14.20",
     "colorlogs": "git+https://github.com/theRealAyan/colorlogs",
