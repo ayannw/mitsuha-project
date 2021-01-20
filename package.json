@@ -1,31 +1,25 @@
 {
-  "name": "mitsuha-project",
-  "version": "1.0.0",
+  "name": "Mitsuha",
+  "version": "0.1.2",
   "description": "Multi-purpose Discord bot.",
-  "main": "index.js",
-  "repository": "https://github.com/theRealAyan/mitsuha-project",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "nodemon src/main.ts",
+    "build": "tsc -b",
+    "start": "yarn build && node build/main"
+  },
+  "repository": "https://github.com/theRealAyan/yotsuha",
   "author": "theRealAyan <ayanispro420@gmail.com>",
   "license": "MIT",
-  "private": false,
-  "scripts": {
-    "start": "node index.js",
-    "run-dev": "nodemon",
-    "dock": "pm2-docker index.js"
-  },
+  "private": "false",
   "dependencies": {
-    "ansi-colors": "^4.1.1",
-    "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "humanize": "^0.0.9",
-    "mathjs": "^9.0.0",
-    "moment": "^2.29.1",
-    "nekos.life": "^2.0.7",
-    "node-fetch": "^2.6.1",
-    "random-hex-color": "^1.0.1",
-    "random-int": "^2.0.1",
-    "reconlx": "^1.0.73",
-    "util": "^0.12.3",
-    "weather-js": "^2.0.0"
+    "@types/node": "^14.14.20",
+    "colorlogs": "git+https://github.com/theRealAyan/colorlogs",
+    "discord.js": "discordjs/discord.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.0-dev.20210119"
   }
 }
