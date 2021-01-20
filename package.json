@@ -13,7 +13,7 @@
   "license": "MIT",
   "private": "false",
   "dependencies": {
-    "@types/node": "^14.14.20",
+    "@types/node": "^14.14.22",
     "colorlogs": "git+https://github.com/theRealAyan/colorlogs",
     "discord.js": "discordjs/discord.js"
   },
