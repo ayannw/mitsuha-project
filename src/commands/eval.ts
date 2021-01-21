@@ -1,5 +1,5 @@
 import { owner, prefix, tscV } from '../config';
-import { Client, Message, MessageEmbed } from 'discord.js';
+import { Client, Message } from 'discord.js';
 import { inspect } from 'util';
 import { version } from 'process';
 import { version as dV } from 'discord.js';
