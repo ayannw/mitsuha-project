@@ -36,7 +36,6 @@ export const cmd: Command = {
 
 		let m: string = '```ts\nDiscord.js version: '
 			+ dV + '\nNode.js version: '
-			+ version + '\nTypescript version: '
 			+ tscV + '\n\n— Output: \n\n'
 			+ output + '\n\n— Done in '
 			+ String(eTime - sTime) + 'ms```';

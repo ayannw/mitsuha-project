@@ -2,6 +2,7 @@ const sTime: number = Date.now();
 
 import * as logger from 'colorlogs';
 import * as config from './config';
+import * as server from './server';
 import { Client, Message } from 'discord.js';
 import { commands } from './handlers/command';
 import { bgBlue, bgGreen } from 'colorette';
@@ -10,7 +11,7 @@ const client: Client = new Client();
 
 async function start(): Promise<void> {
   logger.warn('starting...');
-
+  server.start();
   await client.login(config.token);
 };
 
@@ -46,6 +47,7 @@ client.on('message', (message: Message): void => {
 
 client.once('ready', (): void => {
   logger.success(client.user.tag + ' is online');
+  logger.success('Server started, port: 6969');
   const eTime: number = Date.now();
   logger.info('took ' + (eTime - sTime) + 'ms to boot up');
 });
