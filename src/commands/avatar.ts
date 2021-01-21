@@ -1,5 +1,5 @@
 import { Command } from '../typings/Command';
-import { Client, Message, User, MessageEmbed } from 'discord.js';
+import { Client, Message, MessageEmbed } from 'discord.js';
 import { getMember } from '../tools/getMember';
 
 export const cmd: Command = {
