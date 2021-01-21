@@ -25,7 +25,7 @@ export const cmd: Command = {
     
     return await message.channel.send(embed);
   },
-  help: 'Shows information about a Discord user/guild member.',
+  help: 'Shows information about a Discord user/guild member',
   aliases: ['userinfo'],
   cat: 'Tools'
 };

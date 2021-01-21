@@ -1,30 +1,48 @@
 import { commands } from '../handlers/command';
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { Command } from '../typings/Command';
+import { embedItem } from '../tools/mitsuhaEmbed';
 
 export const cmd: Command = {
 	name: 'help',
 	run: (client: Client, message: Message, args: Array<any>) => {
+		let command: any;
+		let embed: MessageEmbed = new MessageEmbed()
+			.setColor('RANDOM')
+			.setFooter('Requested by ' + message.author.tag, message.author.displayAvatarURL())
+			.setTimestamp();
 		let list: Array<string> = [];
 		
+		if(args[0]){ 
+			if(!commands.get(args[0])){
+				return message.channel.send(`No command \`${args[0]}\` found.`);
+			};
+			command = commands.get(args[0]);
+			list.push(embedItem('Name', command.cmd.name));
+
+			if(command.cmd.aliases) list.push(embedItem('Aliases', `\`${command.cmd.aliases.join(', ')}\``));
+			if(command.cmd.help) list.push(embedItem('Description', command.cmd.help));
+			if(!command.cmd.help) list.push(embedItem('Description', '_Extended help unavailable_'));
+
+			embed.setDescription(list.join(''));
+			return message.channel.send(embed);
+			
+		};
 		commands.forEach(c => {
 			if(c.cmd.ownerOnly) return;
 			if(c.cmd.help){
-				return list.push(`❯ \`${c.cmd.name}\`: ${c.cmd.help}`);
+				return list.push(embedItem(c.cmd.name, c.cmd.help));
 			} else {
-				return list.push(`❯ \`${c.cmd.name}\`: *Extended help unavailable*.`)
+				return list.push(embedItem(c.cmd.name, '_Extended help unavailable_'));
 			};
 		});
 		
-		const embed: MessageEmbed = new MessageEmbed()
-			.setColor('RANDOM')
+		embed
 			.setAuthor('Displaying help', client.user.displayAvatarURL())
-			.setDescription(list.join('\n'))
-			.setFooter('Requested by ' + message.author.tag, message.author.displayAvatarURL())
-			.setTimestamp();
+			.setDescription(list.join(''));
 
 		return message.channel.send(embed);
 	},
-	help: 'A list of all commands.',
+	help: 'A list of all commands',
 	aliases: ['cmds', 'commandlist', 'cmdlist']
 };

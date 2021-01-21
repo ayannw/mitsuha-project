@@ -9,6 +9,6 @@ export const cmd: Command = {
           return m.edit('<:online:735517961602727957> Pong! Latency ' + ping + 'ms, heartbeat ' + client.ws.ping + 'ms <a:heartbeat:785064044322488330>');
         })
   },
-  help: 'Check my latency & heartbeat.',
+  help: 'Check my latency & heartbeat',
   aliases: ['pong', 'latency']
 };
