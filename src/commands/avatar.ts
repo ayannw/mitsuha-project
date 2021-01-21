@@ -1,5 +1,5 @@
 import { Command } from '../typings/Command';
-import { Client, Message, MessageEmbed } from 'discord.js';
+import { Client, User, Message, MessageEmbed } from 'discord.js';
 import { getMember } from '../tools/getMember';
 
 export const cmd: Command = {
@@ -8,12 +8,14 @@ export const cmd: Command = {
     const member = getMember(message);
     if(!member) return message.channel.send('Could not find the user.');
     
+    const user: User = client.users.cache.get(member.id);
     const embed: MessageEmbed = new MessageEmbed()
       .setColor('RANDOM')
-      .setAuthor(member.tag, member.displayAvatarURL({ dynamic: true}))
-      .setImage(member.displayAvatarURL({ dynamic: true}) + '?size=2048')
+      .setAuthor(user.tag, user.displayAvatarURL({ dynamic: true}))
+      .setImage(user.displayAvatarURL({ dynamic: true}) + '?size=2048')
       .setTimestamp();
     
     return message.channel.send(embed);
-  }
+  },
+  aliases: ['a', 'av', 'pfp']
 };

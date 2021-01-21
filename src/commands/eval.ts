@@ -4,8 +4,9 @@ import { inspect } from 'util';
 import { version } from 'process';
 import { version as dV } from 'discord.js';
 import { info } from 'colorlogs';
+import { Command } from '../typings/Command';
 
-export const cmd = {
+export const cmd: Command = {
 	name: 'eval',
 	run: (client: Client, message: Message, args: Array<string>) => {
 		if(String(message.author.id) != owner){
@@ -45,6 +46,6 @@ export const cmd = {
 
 		return message.channel.send(m);
 	},
-	alias: 'ev',
+	aliases: ['ev'],
 	ownerOnly: true
 };

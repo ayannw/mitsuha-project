@@ -32,6 +32,5 @@ export const cmd: Command = {
     return message.channel.send(embed);
   },
   help: 'My statistics.',
-  alias: 'stat',
   cat: 'System'
 };

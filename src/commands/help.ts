@@ -1,7 +1,8 @@
 import { commands } from '../handlers/command';
 import { Client, Message, MessageEmbed } from 'discord.js';
+import { Command } from '../typings/Command';
 
-export const cmd = {
+export const cmd: Command = {
 	name: 'help',
 	run: (client: Client, message: Message, args: Array<any>) => {
 		let list: Array<string> = [];
@@ -9,15 +10,8 @@ export const cmd = {
 		commands.forEach(c => {
 			if(c.cmd.ownerOnly) return;
 			if(c.cmd.help){
-				if(c.cmd.alias){
-					return list.push(`❯ \`${c.cmd.name}|${c.cmd.alias}\`: ${c.cmd.help}`);
-				};
 				return list.push(`❯ \`${c.cmd.name}\`: ${c.cmd.help}`);
-			};
-			if(!c.cmd.help){
-				if(c.cmd.alias){                                                                            list.push(`❯ \`${c.cmd.name}|${c.cmd.alias}\`: ${c.cmd.help}`);
-					return list.push(`❯ \`${c.cmd.name}|${c.cmd.alias}\`: *Extended help unavailable*.`);
-				};
+			} else {
 				return list.push(`❯ \`${c.cmd.name}\`: *Extended help unavailable*.`)
 			};
 		});
@@ -32,5 +26,5 @@ export const cmd = {
 		return message.channel.send(embed);
 	},
 	help: 'A list of all commands.',
-	alias: 'cmds'
+	aliases: ['cmds', 'commandlist', 'cmdlist']
 };

@@ -25,10 +25,18 @@ client.on('message', (message: Message): void => {
 
 	try {
     	commands.forEach(command => {
-    		if(command.cmd.name == cmd || command.cmd.alias == cmd){
-    			return commands.get(command.cmd.name).cmd.run(client, message, args)
-    		};
-    	});
+    		if(command.cmd.name == cmd){
+    			return commands.get(command.cmd.name).cmd.run(client, message, args);
+        };
+
+        if(command.cmd.aliases){
+          command.cmd.aliases.forEach((alias) => {
+            if(alias == cmd){
+              return commands.get(command.cmd.name).cmd.run(client, message, args);
+            };
+          });
+        };
+      });
     } catch(err) {
       logger.error(err);
     	logger.error('unable to find/run command: ' + cmd);
