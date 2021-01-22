@@ -289,7 +289,8 @@ diff@^4.0.1:
 
 discord.js@discordjs/discord.js:
   version "12.5.0"
-  resolved "https://codeload.github.com/discordjs/discord.js/tar.gz/c4c817116f868cedb4ec20bcbf90b9b3d382621e"
+  uid f95f5dcd791b39c6a4d60dc8d64b0287e06ed768
+  resolved "https://codeload.github.com/discordjs/discord.js/tar.gz/f95f5dcd791b39c6a4d60dc8d64b0287e06ed768"
   dependencies:
     "@discordjs/collection" "^0.1.6"
     "@discordjs/form-data" "^3.0.1"
