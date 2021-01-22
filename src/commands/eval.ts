@@ -1,4 +1,4 @@
-import { owner, prefix, tscV } from '../config';
+import { owner, prefix } from '../config';
 import { Client, Message } from 'discord.js';
 import { inspect } from 'util';
 import { version } from 'process';
@@ -36,7 +36,7 @@ export const cmd: Command = {
 
 		let m: string = '```ts\nDiscord.js version: '
 			+ dV + '\nNode.js version: '
-			+ tscV + '\n\n— Output: \n\n'
+			+ version + '\n\n— Output: \n\n'
 			+ output + '\n\n— Done in '
 			+ String(eTime - sTime) + 'ms```';
 		if(output.length > 2000) {

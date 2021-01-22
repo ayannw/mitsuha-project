@@ -5,7 +5,5 @@ export function start(){
   const server = createServer((request: IncomingMessage, response: ServerResponse) => {
     response.end('Online.');
   });
-  server.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
-  });
+  server.listen(port, () => {});
 };

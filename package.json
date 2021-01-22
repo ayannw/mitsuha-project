@@ -2,7 +2,7 @@
   "name": "Mitsuha",
   "version": "0.1.2",
   "description": "Multi-purpose Discord bot.",
-  "main": "src/main.ts",
+  "main": "build/main.js",
   "scripts": {
     "test": "nodemon src/main.ts",
     "build": "tsc -b",
