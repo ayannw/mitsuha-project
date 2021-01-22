@@ -22,9 +22,11 @@ export const cmd: Command = {
 
 			if(command.cmd.aliases) list.push(embedItem('Aliases', `\`${command.cmd.aliases.join(', ')}\``));
 			if(command.cmd.help) list.push(embedItem('Description', command.cmd.help));
-			if(!command.cmd.help) list.push(embedItem('Description', '_Extended help unavailable_'));
+			if(!command.cmd.help) list.push(embedItem('Description', '_Command description  unavailable_'));
 
-			embed.setDescription(list.join(''));
+			embed
+				.setAuthor('Command: ' + command, client.user.displayAvatarURL())
+				.setDescription(list.join(''));
 			return message.channel.send(embed);
 			
 		};
@@ -33,7 +35,7 @@ export const cmd: Command = {
 			if(c.cmd.help){
 				return list.push(embedItem(c.cmd.name, c.cmd.help));
 			} else {
-				return list.push(embedItem(c.cmd.name, '_Extended help unavailable_'));
+				return list.push(embedItem(c.cmd.name, '_Command description unavailable_'));
 			};
 		});
 		
