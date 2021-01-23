@@ -1,7 +1,7 @@
 import * as fs from 'fs';
-import * as logger from 'colorlogs';
+import * as logger from '@ayanthedev/colorlogs';
 import { Collection } from 'discord.js';
-import { bgCyan } from 'colorette';
+import { green } from 'colorette';
 
 let cmds: Collection<string, any> = new Collection();
 let path: string = process.cwd() + '/build/commands/';
@@ -11,7 +11,7 @@ fs.readdir(path, (err, files): void => {
     logger.warn('loading commands ...');
     files.forEach(file => {
         let props = require(`../commands/${file}`);
-        logger.success('loaded ' + 'command: ' + bgCyan(file));
+        logger.success('loaded ' + 'command: ' + green(file));
         let commandName = file.split(".")[0];
         commands.set(commandName, props);
     });

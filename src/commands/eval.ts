@@ -3,7 +3,7 @@ import { Client, Message } from 'discord.js';
 import { inspect } from 'util';
 import { version } from 'process';
 import { version as dV } from 'discord.js';
-import { info } from 'colorlogs';
+import { info } from '@ayanthedev/colorlogs';
 import { Command } from '../types/Command';
 
 export const cmd: Command = {

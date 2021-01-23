@@ -1,6 +1,6 @@
 const sTime: number = new Date().getTime();
 
-import * as logger from 'colorlogs';
+import * as logger from '@ayanthedev/colorlogs';
 import * as config from './config';
 import * as server from './server';
 import { Client, Message } from 'discord.js';
