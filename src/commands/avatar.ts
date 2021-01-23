@@ -1,4 +1,4 @@
-import { Command } from '../typings/Command';
+import { Command } from '../types/Command';
 import { Client, User, Message, MessageEmbed } from 'discord.js';
 import { getMember } from '../tools/getMember';
 

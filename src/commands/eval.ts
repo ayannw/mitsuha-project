@@ -4,7 +4,7 @@ import { inspect } from 'util';
 import { version } from 'process';
 import { version as dV } from 'discord.js';
 import { info } from 'colorlogs';
-import { Command } from '../typings/Command';
+import { Command } from '../types/Command';
 
 export const cmd: Command = {
 	name: 'eval',

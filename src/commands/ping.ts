@@ -1,5 +1,5 @@
 import { Client, Message } from 'discord.js';
-import { Command } from '../typings/Command';
+import { Command } from '../types/Command';
 
 export const cmd: Command = {
   name: 'ping',

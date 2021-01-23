@@ -1,6 +1,6 @@
 import { commands } from '../handlers/command';
 import { Client, Message, MessageEmbed } from 'discord.js';
-import { Command } from '../typings/Command';
+import { Command } from '../types/Command';
 import { embedItem } from '../tools/mitsuhaEmbed';
 
 export const cmd: Command = {

@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { Command } from '../typings/Command';
+import { Command } from '../types/Command';
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { embedItem } from '../tools/mitsuhaEmbed';
 
