@@ -20,9 +20,9 @@ client.on('message', (message: Message): void => {
   logger.info(bgBlue(message.guild.name) + '>' + bgGreen(message.author.tag) + '>' + message.content);
   if(!message.content.startsWith(config.prefix)){ return; };
   if(message.content.startsWith(config.prefix)){
-    const arr: Array<string> = message.content.split(' ');
+    const arr: string[] = message.content.split(' ');
     const cmd: string = arr[0].toLowerCase().split(config.prefix)[1];
-    const args: Array<string> = arr.slice(1);
+    const args: string[] = arr.slice(1);
 
 	try {
     	commands.forEach(command => {

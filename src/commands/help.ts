@@ -11,7 +11,7 @@ export const cmd: Command = {
 			.setColor('RANDOM')
 			.setFooter('Requested by ' + message.author.tag, message.author.displayAvatarURL())
 			.setTimestamp();
-		let list: Array<string> = [];
+		let list: string[] = [];
 		
 		if(args[0]){
 			if(!commands.get(args[0])){

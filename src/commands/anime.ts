@@ -8,7 +8,7 @@ const kitsuLogo: string = 'https://avatars1.githubusercontent.com/u/7648832?s=20
 
 export const cmd: Command = {
 	name: 'anime',
-	run: async (client: Client, message: Message, args: Array<string>) => {
+	run: async (client: Client, message: Message, args: string[]) => {
 		if(!args[0])  return message.channel.send('Please input a valid anime name.');
 		const animeName: string = encodeURI(args.join(' '));
 		const sTime: number = new Date().getTime();

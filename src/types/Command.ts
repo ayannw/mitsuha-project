@@ -1,7 +1,7 @@
 import { Client, Message } from 'discord.js';
 
 interface Run {
-	(client: Client, message: Message, args?: Array<string>)
+	(client: Client, message: Message, args?: string[])
 };
 
 export interface Command {
@@ -9,6 +9,6 @@ export interface Command {
 	run: Run,
 	cat?: string,
 	help?: string,
-	aliases?: Array<string>,
+	aliases?: string[],
 	ownerOnly?: boolean
 };
