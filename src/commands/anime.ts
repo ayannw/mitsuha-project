@@ -53,7 +53,7 @@ export const cmd: Command = {
 				embedItem('Age rating', anime.ageRating)
 			)
 			.setThumbnail(anime.posterImage.original)
-			.setFooter('kitsu.io | ' + time, kitsuLogo)
+			.setFooter('kitsu.io | ' + time, kitsuLogo);
 
 		msg.delete();
 		return message.channel.send(embed);
