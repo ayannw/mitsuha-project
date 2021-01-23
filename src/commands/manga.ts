@@ -54,5 +54,6 @@ export const cmd: Command = {
 		msg.delete();
 		return message.channel.send(embed);
 	},
-	help: 'Search for your favorite manga !'
+  help: 'Search for your favorite manga !',
+  usage: 'm.manga <manga name>'
 };

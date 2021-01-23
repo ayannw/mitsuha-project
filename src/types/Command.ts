@@ -10,5 +10,6 @@ export interface Command {
 	cat?: string,
 	help?: string,
 	aliases?: string[],
+	usage?: string,
 	ownerOnly?: boolean
 };

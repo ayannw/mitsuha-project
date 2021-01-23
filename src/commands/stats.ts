@@ -28,5 +28,6 @@ export const cmd: Command = {
     return message.channel.send(embed);
   },
   help: 'My statistics',
-  cat: 'System'
+  cat: 'System',
+  usage: 'm.stats'
 };

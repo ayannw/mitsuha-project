@@ -27,5 +27,6 @@ export const cmd: Command = {
   },
   help: 'Shows information about a Discord user/guild member',
   aliases: ['userinfo'],
-  cat: 'Tools'
+  cat: 'Tools',
+  usage: 'm.whois | m.whois <@user>'
 };

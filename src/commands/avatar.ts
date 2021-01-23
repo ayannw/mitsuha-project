@@ -17,5 +17,6 @@ export const cmd: Command = {
     
     return message.channel.send(embed);
   },
-  aliases: ['a', 'av', 'pfp']
+  aliases: ['a', 'av', 'pfp'],
+  usage: 'm.avatar | m.avatar <@user>'
 };

@@ -60,5 +60,6 @@ export const cmd: Command = {
 		msg.delete();
 		return message.channel.send(embed);
 	},
-	help: 'Search for your favorite anime !'
+	help: 'Search for your favorite anime !',
+	usage: 'm.anime <anime name>'
 };

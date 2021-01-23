@@ -32,11 +32,8 @@ export const cmd: Command = {
 		};
 		commands.forEach(c => {
 			if(c.cmd.ownerOnly) return;
-			if(c.cmd.help){
-				return list.push(embedItem(c.cmd.name, c.cmd.help));
-			} else {
-				return list.push(embedItem(c.cmd.name, '_Command description unavailable_'));
-			};
+			let help: string = c.cmd.help || '_Command description unavailable_';
+			list.push(c.cmd.name, help);
 		});
 		
 		embed
@@ -45,6 +42,7 @@ export const cmd: Command = {
 
 		return message.channel.send(embed);
 	},
-	help: 'A list of all commands',
-	aliases: ['cmds', 'commandlist', 'cmdlist']
+	help: 'Shows a list of all commands or describes a command',
+	aliases: ['cmds', 'commandlist', 'cmdlist'],
+	usage: 'm.help | m.help <command>'
 };
