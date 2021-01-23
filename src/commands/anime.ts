@@ -41,6 +41,7 @@ export const cmd: Command = {
 				|| anime.titles.en
 				|| anime.titles.en_jp
 				|| anime.titles.ja_jp)
+			.setURL('https://kitsu.io/anime/' + anime.slug)
 			.setColor('RANDOM')
 			.setDescription(
 				embedItem('English title', anime.titles.en || 'None') +
