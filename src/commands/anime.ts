@@ -21,7 +21,8 @@ export const cmd: Command = {
 			_list = await fetch(baseurl + animeName);
 			list = await _list.json();
 		} catch(err) {
-			return message.channel.send('Error ' + err);
+			msg.delete();
+			return message.channel.send('Error: ```js\n' + err + '```');
 		};
 		if(!list.data[0]){
 			msg.delete();
