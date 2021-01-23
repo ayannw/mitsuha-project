@@ -13,7 +13,7 @@ export const cmd: Command = {
 			.setTimestamp();
 		let list: Array<string> = [];
 		
-		if(args[0]){ 
+		if(args[0]){
 			if(!commands.get(args[0])){
 				return message.channel.send(`Command \`${args[0]}\` not found`);
 			};
