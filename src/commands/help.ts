@@ -15,7 +15,7 @@ export const cmd: Command = {
 		
 		if(args[0]){ 
 			if(!commands.get(args[0])){
-				return message.channel.send(`No command \`${args[0]}\` found.`);
+				return message.channel.send(`Command \`${args[0]}\` not found`);
 			};
 			command = commands.get(args[0]);
 			list.push(embedItem('Name', command.cmd.name));
@@ -25,7 +25,7 @@ export const cmd: Command = {
 			if(!command.cmd.help) list.push(embedItem('Description', '_Command description  unavailable_'));
 
 			embed
-				.setAuthor('Command: ' + command, client.user.displayAvatarURL())
+				.setAuthor('Command: ' + command.cmd.name, client.user.displayAvatarURL())
 				.setDescription(list.join(''));
 			return message.channel.send(embed);
 			
