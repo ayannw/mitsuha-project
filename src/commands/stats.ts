@@ -1,7 +1,7 @@
 import { Client, Message, MessageEmbed } from 'discord.js';
-import { version as dVersion } from 'discord.js'
+import { version as dVersion } from 'discord.js';
 import { memoryUsage } from 'process';
-import { version, name, tscV, instance } from '../config'; 
+import { version, name, tscV } from '../config';
 import { Command } from '../typings/Command';
 
 export const cmd: Command = {
@@ -24,10 +24,6 @@ export const cmd: Command = {
       .setAuthor(name + ' ' + version, client.user.displayAvatarURL())
       .setDescription(description)
       .setTimestamp();
-
-    if(instance.dev) {
-    	embed.setFooter('Development instance');
-    }
     
     return message.channel.send(embed);
   },
