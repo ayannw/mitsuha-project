@@ -33,7 +33,7 @@ export const cmd: Command = {
 		commands.forEach(c => {
 			if(c.cmd.ownerOnly) return;
 			let help: string = c.cmd.help || '_Command description unavailable_';
-			list.push(c.cmd.name, help);
+			list.push(embedItem(c.cmd.name, help));
 		});
 		
 		embed
