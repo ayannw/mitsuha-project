@@ -30,7 +30,9 @@ export const cmd: Command = {
 			output = err;
 		};
 
-		info(output);
+		String(output).split('\n').forEach((line) => {
+			info(line);
+		});
 		
 		const eTime: number = new Date().getTime();
 
