@@ -17,7 +17,7 @@ async function start(): Promise<void> {
 
 client.on('message', (message: Message): void => {
   if(!message.channel) return;
-  logger.info(bgBlue(message.guild.name) + '>' + bgGreen(message.author.tag) + '>' + message.content);
+  logger.info(bgBlue(message.guild.name) + bgGreen(message.author.tag) + message.content);
   if(!message.content.startsWith(config.prefix)){ return; };
   if(message.content.startsWith(config.prefix)){
     const arr: string[] = message.content.split(' ');
