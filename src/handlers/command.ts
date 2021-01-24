@@ -14,7 +14,7 @@ fs.readdir(path, (err, files): void => {
     files.forEach(file => {
         let props = require(`../commands/${file}`);
         let n: number = new Date().getTime();
-        logger.success('├─ loaded ' 
+        logger.success('├─ loaded '
         	+ green(file)
         	+ ' in '
         	+ String(n-s)
