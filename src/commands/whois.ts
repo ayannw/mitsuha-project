@@ -1,6 +1,7 @@
 import { Command } from '../types/Command';
 import { Client, Message, User, MessageEmbed } from 'discord.js';
 import { getMember } from '../tools/getMember';
+import { embedItem as item } from '../tools/mitsuhaEmbed';
 
 export const cmd: Command = {
   name: 'whois',
@@ -9,17 +10,18 @@ export const cmd: Command = {
   if(!member) return message.channel.send('Unable to find the user.');
 
   const user: User = client.users.cache.get(member.id);
+  const description: string = '• User Information\n'
+    + item('Name', user.username)
+    + item('Discriminator', user.discriminator)
+    + item('Avatar', `[URL](${user.displayAvatarURL({ dynamic: true })})`)
+    + item('Mention', `<@${user.id}>`)
+    + item('Created at', `${String(user.createdAt).substring(0, 25)}`);
+
   const embed: MessageEmbed = new MessageEmbed()
   	.setColor('RANDOM')
   	.setAuthor(user.tag, user.displayAvatarURL({ dynamic: true }))
   	.setThumbnail(user.displayAvatarURL({ dynamic: true }))
-  	.setDescription(`• user Information
-❯ Name: ${user.username}
-❯ Discriminator: ${user.discriminator}
-❯ Avatar: [URL](${user.displayAvatarURL({ dynamic: true })})
-❯ Mention: <@${user.id}>
-❯ ID: ${user.id}
-❯ Created at: ${String(user.createdAt).substring(0, 25)}`)
+  	.setDescription(description)
 		.setFooter('\u202b', client.user.displayAvatarURL({ dynamic: true }))
 		.setTimestamp();
     
