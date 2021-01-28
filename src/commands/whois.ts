@@ -25,6 +25,7 @@ export const cmd: Command = {
 		.setFooter('\u202b', client.user.displayAvatarURL({ dynamic: true }))
 		.setTimestamp();
     
+    
     return message.channel.send(embed);
   },
   help: 'Shows information about a Discord user/guild member',
