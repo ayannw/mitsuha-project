@@ -4,11 +4,11 @@ import { getMember } from '../tools/getMember';
 
 export const cmd: Command = {
   name: 'avatar',
-  run: (client: Client, message: Message): Promise<Message> => {
-    const member = getMember(message);
-    if(!member) return message.channel.send('Could not find the user.');
+  run: (client: Client, message: Message, args: string[]): Promise<Message> => {
+    const member = getMember(message, args);
+	if(!member) return message.channel.send('Unable to find the user.');
     
-    const user: User = client.users.cache.get(member.id);
+    const user: User = member.user;
     const embed: MessageEmbed = new MessageEmbed()
       .setColor('RANDOM')
       .setAuthor(user.tag, user.displayAvatarURL({ dynamic: true}))

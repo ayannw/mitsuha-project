@@ -5,9 +5,9 @@ import { getMember } from '../tools/getMember';
 export const cmd: Command = {
   name: 'whois',
   run: async (client: Client, message: Message, args: Array<any>): Promise<Message> => {
-  const member: any = getMember(message);
+  const member: any = getMember(message, args);
+  if(!member) return message.channel.send('Unable to find the user.');
 
-  if(!member) return message.channel.send('Could not find the user.');
   const user: User = client.users.cache.get(member.id);
   const embed: MessageEmbed = new MessageEmbed()
   	.setColor('RANDOM')
