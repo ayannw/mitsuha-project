@@ -36,7 +36,7 @@ export const cmd: Command = {
 		
 		const eTime: number = new Date().getTime();
 
-		let m: string = '```ts\nDiscord.js version: '
+		let m: string = '```js\nDiscord.js version: '
 			+ dV + '\nNode.js version: '
 			+ version + '\n\n— Output: \n\n'
 			+ output + '\n\n— Done in '

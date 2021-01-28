@@ -7,15 +7,21 @@ export function getMember(message: Message, args: string[]): any {
   if(args.length == 0) {
   	return member = guild.members.cache.get(message.author.id);
   } else {
+		let arg: string = args[0];
   	member = message.mentions.users.first()
-  		|| guild.members.cache.get(args[0])
+  		|| guild.members.cache.get(arg)
   		|| guild.members.cache.find(
-  		(m) => m.user.username == args[0]
-  			|| m.user.username.startsWith(args[0])
-			|| m.displayName == args[0]
-			|| m.displayName.startsWith(args[0])
-			|| m.nickname == args[0]
-			|| m.user.tag == args[0]
+			(m) => m.user.username == arg
+			|| m.user.username == arg.toLowerCase()
+			|| m.user.username.startsWith(arg)
+			|| m.user.username.startsWith(arg.toLowerCase())
+			|| m.user.username.toLowerCase().startsWith(arg)
+			|| m.displayName == arg
+			|| m.displayName.startsWith(arg)
+			|| m.displayName == arg.toLowerCase()
+			|| m.displayName.startsWith(arg.toLowerCase())
+			|| m.displayName.toLowerCase().startsWith(arg)
+			|| m.user.tag == arg
 		)
 		|| false;
   };
