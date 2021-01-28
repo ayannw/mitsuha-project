@@ -1,8 +1,7 @@
 
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="Mitsuha" src="https://cdn.discordapp.com/avatars/749640517549293729/7e7e4114a2a23227d297d858cd6a5b47.png?size=2048" />
 
 <div align="center">
-
-<img src="https://cdn.discordapp.com/avatars/749640517549293729/7e7e4114a2a23227d297d858cd6a5b47.png?size=2048" height="150" width="150"/>
 
 <h1 id="mitsuha">Mitsuha</h1>
 <p><a href="https://lgtm.com/projects/g/theRealAyan/mitsuha-project/alerts/"><img src="https://img.shields.io/lgtm/alerts/g/theRealAyan/mitsuha-project.svg?logo=lgtm&amp;logoWidth=18" alt="Total alerts"></a>
