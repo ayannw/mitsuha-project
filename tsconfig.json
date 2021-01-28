@@ -1,6 +1,8 @@
 {
 	"compilerOptions": {
-	    "outDir": "build"
+			"outDir": "build",
+			"strict": false,
+			"resolveJsonModule": true
      },
      "exclude": [
      	"node_modules/",
