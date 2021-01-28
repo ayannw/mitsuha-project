@@ -2,10 +2,9 @@
 	"compilerOptions": {
 			"outDir": "build",
 			"strict": false,
-			"resolveJsonModule": true
+			"resolveJsonModule": false
      },
-     "exclude": [
-     	"node_modules/",
-     	"tests/"
+     "include": [
+     	"src/"
      ]
 }
