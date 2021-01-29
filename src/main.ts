@@ -23,8 +23,8 @@ client.on('message', (message: Message): void => {
   message.content.split('\n').forEach((line) => {
   	logger.info(line);
   });
-  if(!message.content.startsWith(config.prefix)){ return; };
-  if(message.content.startsWith(config.prefix)){
+  if(!message.content.toLowerCase().startsWith(config.prefix)){ return; };
+  if(message.content.toLowerCase().startsWith(config.prefix)){
     const arr: string[] = message.content.split(' ');
     const cmd: string = arr[0].toLowerCase().split(config.prefix)[1];
     const args: string[] = arr.slice(1);
