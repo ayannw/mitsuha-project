@@ -5,7 +5,7 @@ export function getMember(message: Message, args: string[]): any {
   let guild = message.guild;
 	
   if(args.length == 0) {
-  	return member = guild.members.cache.get(message.author.id);
+  	return guild.members.cache.get(message.author.id);
   } else {
 		let arg: string = args[0];
   	member = message.mentions.users.first()

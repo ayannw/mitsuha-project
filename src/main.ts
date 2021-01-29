@@ -6,10 +6,12 @@ import * as server from './server';
 import { Client, Message } from 'discord.js';
 import { commands } from './handlers/command';
 import { bgBlue, bgGreen } from 'colorette';
+import { draw } from './tools/drawMitsuha';
 
 const client: Client = new Client();
 
 async function start(): Promise<void> {
+  draw();
   logger.warn('logging in ...');
   server.start();
   await client.login(config.token);
