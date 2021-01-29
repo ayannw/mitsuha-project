@@ -1,10 +1,10 @@
-import { owner, prefix } from '../config';
+import { owner, prefix } from '../../config';
 import { Client, Message } from 'discord.js';
 import { inspect } from 'util';
 import { version } from 'process';
 import { version as dV } from 'discord.js';
 import { info } from '@ayanthedev/colorlogs';
-import { Command } from '../types/Command';
+import { Command } from '../../types/Command';
 
 export const cmd: Command = {
 	name: 'eval',
@@ -29,10 +29,6 @@ export const cmd: Command = {
 		} catch (err) {
 			output = err;
 		};
-
-		String(output).split('\n').forEach((line) => {
-			info(line);
-		});
 		
 		const eTime: number = new Date().getTime();
 

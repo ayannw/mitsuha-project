@@ -1,8 +1,8 @@
 {
 	"compilerOptions": {
-			"outDir": "build",
-			"strict": false,
-			"resolveJsonModule": false
+		"outDir": "build",
+		"strict": false,
+		"resolveJsonModule": false,
      },
      "include": [
      	"src/"

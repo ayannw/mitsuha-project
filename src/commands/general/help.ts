@@ -1,7 +1,7 @@
-import { commands } from '../handlers/command';
+import { commands } from '../../handlers/command';
 import { Client, Message, MessageEmbed } from 'discord.js';
-import { Command } from '../types/Command';
-import { embedItem } from '../tools/mitsuhaEmbed';
+import { Command } from '../../types/Command';
+import { embedItem } from '../../tools/mitsuhaEmbed';
 
 export const cmd: Command = {
 	name: 'help',

@@ -1,6 +1,6 @@
-import { Command } from '../types/Command';
+import { Command } from '../../types/Command';
 import { Client, User, Message, MessageEmbed } from 'discord.js';
-import { getMember } from '../tools/getMember';
+import { getMember } from '../../tools/getMember';
 
 export const cmd: Command = {
   name: 'avatar',

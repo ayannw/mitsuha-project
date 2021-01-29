@@ -1,7 +1,7 @@
-import { Command } from '../types/Command';
+import { Command } from '../../types/Command';
 import { Client, Message, User, MessageEmbed } from 'discord.js';
-import { getMember } from '../tools/getMember';
-import { embedItem as item } from '../tools/mitsuhaEmbed';
+import { getMember } from '../../tools/getMember';
+import { embedItem as item } from '../../tools/mitsuhaEmbed';
 
 export const cmd: Command = {
   name: 'whois',
@@ -9,7 +9,7 @@ export const cmd: Command = {
   const member: any = getMember(message, args);
   if(!member) return message.channel.send('Unable to find the user.');
 
-  const user: User = client.users.cache.get(member.id);
+  const user: User = member.user;
   const description: string = '• User Information\n'
     + item('Name', user.username)
     + item('Discriminator', user.discriminator)
@@ -22,8 +22,8 @@ export const cmd: Command = {
   	.setAuthor(user.tag, user.displayAvatarURL({ dynamic: true }))
   	.setThumbnail(user.displayAvatarURL({ dynamic: true }))
   	.setDescription(description)
-		.setFooter('\u202b', client.user.displayAvatarURL({ dynamic: true }))
-		.setTimestamp();
+	.setFooter('\u202b', client.user.displayAvatarURL({ dynamic: true }))
+	.setTimestamp();
     
     
     return message.channel.send(embed);

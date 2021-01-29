@@ -1,8 +1,8 @@
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { version as dVersion } from 'discord.js';
 import { memoryUsage } from 'process';
-import { version, name, tscV } from '../config';
-import { Command } from '../types/Command';
+import { version, name, tscV } from '../../config';
+import { Command } from '../../types/Command';
 
 export const cmd: Command = {
   name: 'stats',

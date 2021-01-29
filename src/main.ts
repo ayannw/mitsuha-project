@@ -10,14 +10,17 @@ import { bgBlue, bgGreen } from 'colorette';
 const client: Client = new Client();
 
 async function start(): Promise<void> {
-  logger.warn('starting...');
+  logger.warn('logging in ...');
   server.start();
   await client.login(config.token);
 };
 
 client.on('message', (message: Message): void => {
   if(!message.channel) return;
-  logger.info(bgBlue(message.guild.name) + bgGreen(message.author.tag) + message.content);
+  logger.info(bgBlue(message.guild.name) + bgGreen(message.author.tag));
+  message.content.split('\n').forEach((line) => {
+  	logger.info(line);
+  });
   if(!message.content.startsWith(config.prefix)){ return; };
   if(message.content.startsWith(config.prefix)){
     const arr: string[] = message.content.split(' ');

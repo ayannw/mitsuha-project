@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
-import { Command } from '../types/Command';
+import { Command } from '../../types/Command';
 import { Client, Message, MessageEmbed } from 'discord.js';
-import { embedItem } from '../tools/mitsuhaEmbed';
+import { embedItem } from '../../tools/mitsuhaEmbed';
 
 const baseurl: string = 'https://kitsu.io/api/edge/manga?filter[text]=';
 const kitsuLogo: string = 'https://avatars1.githubusercontent.com/u/7648832?s=200&v=4';
