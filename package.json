@@ -6,7 +6,9 @@
   "scripts": {
     "test": "nodemon build/main",
     "build": "tsc -b",
-    "start": "yarn build && node build/main"
+    "start": "yarn build && node build/main",
+    "lint": "eslint . --ext .ts",
+    "lint-fix": "eslint . --ext .ts --fix"
   },
   "repository": "https://github.com/theRealAyan/yotsuha",
   "author": "theRealAyan <ayanispro420@gmail.com>",
@@ -20,7 +22,10 @@
     "glob": "^7.1.6"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.18.0",
     "nodemon": "^2.0.7",
-    "typescript": "^4.2.0-dev.20210129"
+    "typescript": "^4.1.3"
   }
 }

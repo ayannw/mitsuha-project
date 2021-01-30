@@ -1,9 +1,9 @@
-export const name: string = '';
-export const prefix: string = '';
-export const owner: string = '';
-export const invite_url:string = '';
-export const github:string = 'https://github.com/theRealAyan/mitsuha-project';
-export const token: string = '';
-export const version: string = '<bot version>';
-export const tscV: string = '<TS version>';
+export const name = '';
+export const prefix = '';
+export const owner = '';
+export const invite_url = '';
+export const github = 'https://github.com/theRealAyan/mitsuha-project';
+export const token = '';
+export const version = '<bot version>';
+export const tscV = '<TS version>';
 export const instance = { dev: true };

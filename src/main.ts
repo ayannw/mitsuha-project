@@ -15,7 +15,7 @@ async function start(): Promise<void> {
   logger.warn('logging in ...');
   server.start();
   await client.login(config.token);
-};
+}
 
 client.on('message', (message: Message): void => {
   if(!message.channel) return;
@@ -23,7 +23,7 @@ client.on('message', (message: Message): void => {
   message.content.split('\n').forEach((line) => {
   	logger.info(line);
   });
-  if(!message.content.toLowerCase().startsWith(config.prefix)){ return; };
+  if(!message.content.toLowerCase().startsWith(config.prefix)){ return; }
   if(message.content.toLowerCase().startsWith(config.prefix)){
     const arr: string[] = message.content.split(' ');
     const cmd: string = arr[0].toLowerCase().split(config.prefix)[1];
@@ -33,21 +33,21 @@ client.on('message', (message: Message): void => {
     	commands.forEach(command => {
     		if(command.cmd.name == cmd){
     			return commands.get(command.cmd.name).cmd.run(client, message, args);
-        };
+        }
 
         if(command.cmd.aliases){
           command.cmd.aliases.forEach((alias) => {
             if(alias == cmd){
               return commands.get(command.cmd.name).cmd.run(client, message, args);
-            };
+            }
           });
-        };
+        }
       });
     } catch(err) {
       logger.error(err);
     	logger.error('unable to find/run command: ' + cmd);
-    };
-  };
+    }
+  }
 });
 
 client.once('ready', (): void => {

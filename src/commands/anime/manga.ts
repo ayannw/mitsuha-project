@@ -3,8 +3,8 @@ import { Command } from '../../types/Command';
 import { Client, Message, MessageEmbed } from 'discord.js';
 import { embedItem } from '../../tools/mitsuhaEmbed';
 
-const baseurl: string = 'https://kitsu.io/api/edge/manga?filter[text]=';
-const kitsuLogo: string = 'https://avatars1.githubusercontent.com/u/7648832?s=200&v=4';
+const baseurl = 'https://kitsu.io/api/edge/manga?filter[text]=';
+const kitsuLogo = 'https://avatars1.githubusercontent.com/u/7648832?s=200&v=4';
 
 export const cmd: Command = {
 	name: 'manga',
@@ -23,11 +23,11 @@ export const cmd: Command = {
 		} catch(err) {
 			msg.delete();
 			return message.channel.send('Error: ```js\n' + err + '```');
-		};
+		}
 		if(!list.data[0]){
 			msg.delete();
 			return message.channel.send('Could not find the manga.');
-		};
+		}
 		const manga = list.data[0].attributes;
 		const eTime: number = new Date().getTime();
 		const time: string = String(eTime-sTime) + 'ms';

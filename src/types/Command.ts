@@ -2,7 +2,7 @@ import { Client, Message } from 'discord.js';
 
 interface Run {
 	(client: Client, message: Message, args?: string[])
-};
+}
 
 export interface Command {
 	name: string,
@@ -12,4 +12,4 @@ export interface Command {
 	aliases?: string[],
 	usage?: string,
 	ownerOnly?: boolean
-};
+}

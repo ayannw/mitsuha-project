@@ -7,16 +7,16 @@ export const cmd: Command = {
 	name: 'help',
 	run: (client: Client, message: Message, args: Array<any>) => {
 		let command: any;
-		let embed: MessageEmbed = new MessageEmbed()
+		const embed: MessageEmbed = new MessageEmbed()
 			.setColor('RANDOM')
 			.setFooter('Requested by ' + message.author.tag, message.author.displayAvatarURL())
 			.setTimestamp();
-		let list: string[] = [];
+		const list: string[] = [];
 		
 		if(args[0]){
 			if(!commands.get(args[0])){
 				return message.channel.send(`Command \`${args[0]}\` not found`);
-			};
+			}
 			command = commands.get(args[0]);
 			list.push(embedItem('Name', command.cmd.name));
 
@@ -29,10 +29,10 @@ export const cmd: Command = {
 				.setDescription(list.join(''));
 			return message.channel.send(embed);
 			
-		};
+		}
 		commands.forEach(c => {
 			if(c.cmd.ownerOnly) return;
-			let help: string = c.cmd.help || '_Command description unavailable_';
+			const help: string = c.cmd.help || '_Command description unavailable_';
 			list.push(embedItem(c.cmd.name, help));
 		});
 		

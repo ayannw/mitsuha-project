@@ -31,4 +31,4 @@ const str: string = green('┌──────')
 
 export function draw(): void {
 	str.split('\n').forEach((line) => { info(line) });
-};
+}

@@ -8,8 +8,8 @@ logger.warn('loading commands ...');
 
 const s: number = new Date().getTime();
 
-let cmds: Collection<string, any> = new Collection();
-let path: string = process.cwd() + '/build/commands/';
+const cmds: Collection<string, any> = new Collection();
+const path: string = process.cwd() + '/build/commands/';
 
 sync(path + '**/*.*').forEach((file) => {
 	const props = require(resolve(file));

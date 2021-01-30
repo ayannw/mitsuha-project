@@ -11,7 +11,7 @@ export const cmd: Command = {
     const channels: number = client.channels.cache.size;
     const guilds: number = client.guilds.cache.size;
     const memoryUsed: string = `${memoryUsage().heapUsed / 1048576}`.substring(0, 5) + 'MB';
-    const description: string = `• Statistics:
+    const description = `• Statistics:
 ❯ Users: ${users}
 ❯ Channels: ${channels}
 ❯ Guilds: ${guilds}

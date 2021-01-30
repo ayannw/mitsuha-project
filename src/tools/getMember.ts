@@ -2,12 +2,12 @@ import { Message } from 'discord.js';
 
 export function getMember(message: Message, args: string[]): any {
   let member: any;
-  let guild = message.guild;
+  const guild = message.guild;
 	
   if(args.length == 0) {
   	return guild.members.cache.get(message.author.id);
   } else {
-		let arg: string = args[0];
+		const arg: string = args[0];
   	member = message.mentions.users.first()
   		|| guild.members.cache.get(arg)
   		|| guild.members.cache.find(
@@ -24,7 +24,7 @@ export function getMember(message: Message, args: string[]): any {
 			|| m.user.tag == arg
 		)
 		|| false;
-  };
+  }
 
   return member;
-};
+}

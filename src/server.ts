@@ -6,4 +6,4 @@ export function start(){
     response.end('Online.');
   });
   server.listen(port, () => {});
-};
+}

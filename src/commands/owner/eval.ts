@@ -10,15 +10,15 @@ export const cmd: Command = {
 	run: (client: Client, message: Message, args: string[]) => {
 		if(String(message.author.id) != owner){
 			return message.channel.send('You don\'t own me.');
-		};
+		}
 		let code: string;
 
 		if(message.content.startsWith(prefix+'ev')){
 			code = message.content.split(prefix+'ev')[1];
-		};
+		}
 		if(message.content.startsWith(prefix+'eval')){
 			code = message.content.split(prefix+'eval')[1];
-		};
+		}
 		
 		const sTime: number = new Date().getTime();
 		let output: any;
@@ -27,7 +27,7 @@ export const cmd: Command = {
 			output = inspect(eval(code));
 		} catch (err) {
 			output = err;
-		};
+		}
 		
 		const eTime: number = new Date().getTime();
 		
@@ -38,7 +38,7 @@ export const cmd: Command = {
 			+ String(eTime - sTime) + 'ms```';
 		if(output.length > 2000) {
 			m = 'Output too long.';
-		};
+		}
 
 		return message.channel.send(m);
 	},
