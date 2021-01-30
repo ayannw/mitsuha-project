@@ -5,7 +5,7 @@ import { embedItem as item } from '../../tools/mitsuhaEmbed';
 
 export const cmd: Command = {
   name: 'whois',
-  run: async (client: Client, message: Message, args: Array<any>): Promise<Message> => {
+  run: async (client: Client, message: Message, args: string[]): Promise<Message> => {
   const member: any = getMember(message, args);
   if(!member) return message.channel.send('Unable to find the user.');
 
@@ -18,10 +18,10 @@ export const cmd: Command = {
     + item('Created at', `${String(user.createdAt).substring(0, 25)}`);
 
   const embed: MessageEmbed = new MessageEmbed()
-  	.setColor('RANDOM')
-  	.setAuthor(user.tag, user.displayAvatarURL({ dynamic: true }))
-  	.setThumbnail(user.displayAvatarURL({ dynamic: true }))
-  	.setDescription(description)
+    .setColor('RANDOM')
+    .setAuthor(user.tag, user.displayAvatarURL({ dynamic: true }))
+    .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+    .setDescription(description)
 	.setFooter('\u202b', client.user.displayAvatarURL({ dynamic: true }))
 	.setTimestamp();
     

@@ -1,9 +1,9 @@
 import {
-	red,
+    red,
     green,
     yellow,
     blue,
-    magenta 
+    magenta
 } from 'colorette';
 import { info } from '@ayanthedev/colorlogs';
 
@@ -30,5 +30,5 @@ const str: string = green('┌──────')
     + red('──────┘');
 
 export function draw(): void {
-	str.split('\n').forEach((line) => { info(line) });
+    str.split('\n').forEach((line) => { info(line) });
 }

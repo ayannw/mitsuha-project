@@ -7,7 +7,7 @@ import { Command } from '../../types/Command';
 
 export const cmd: Command = {
 	name: 'eval',
-	run: (client: Client, message: Message, args: string[]) => {
+	run: (client: Client, message: Message) => {
 		if(String(message.author.id) != owner){
 			return message.channel.send('You don\'t own me.');
 		}

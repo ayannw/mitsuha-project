@@ -3,6 +3,7 @@
 		"outDir": "build",
 		"strict": false,
 		"resolveJsonModule": false,
+		"allowJs": true
      },
      "include": [
      	"src/"

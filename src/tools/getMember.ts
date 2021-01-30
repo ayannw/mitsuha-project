@@ -5,12 +5,12 @@ export function getMember(message: Message, args: string[]): any {
   const guild = message.guild;
 	
   if(args.length == 0) {
-  	return guild.members.cache.get(message.author.id);
+		return guild.members.cache.get(message.author.id);
   } else {
 		const arg: string = args[0];
-  	member = message.mentions.users.first()
-  		|| guild.members.cache.get(arg)
-  		|| guild.members.cache.find(
+		member = message.mentions.users.first()
+			|| guild.members.cache.get(arg)
+			|| guild.members.cache.find(
 			(m) => m.user.username == arg
 			|| m.user.username == arg.toLowerCase()
 			|| m.user.username.startsWith(arg)
