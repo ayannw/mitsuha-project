@@ -3,7 +3,6 @@ import { Client, Message } from 'discord.js';
 import { inspect } from 'util';
 import { version } from 'process';
 import { version as dV } from 'discord.js';
-import { info } from '@ayanthedev/colorlogs';
 import { Command } from '../../types/Command';
 
 export const cmd: Command = {
@@ -31,7 +30,7 @@ export const cmd: Command = {
 		};
 		
 		const eTime: number = new Date().getTime();
-
+		
 		let m: string = '```js\nDiscord.js version: '
 			+ dV + '\nNode.js version: '
 			+ version + '\n\n— Output: \n\n'
