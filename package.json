@@ -7,8 +7,8 @@
     "test": "nodemon build/main",
     "build": "tsc -b",
     "start": "yarn build && node build/main",
-    "lint": "eslint . --ext .ts",
-    "lint-fix": "eslint . --ext .ts --fix"
+    "lint": "eslint ./src/ --ext .ts",
+    "lint-fix": "eslint ./src/ --ext .ts --fix"
   },
   "repository": "https://github.com/theRealAyan/yotsuha",
   "author": "theRealAyan <ayanispro420@gmail.com>",
