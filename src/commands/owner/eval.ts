@@ -21,7 +21,7 @@ export const cmd: Command = {
 		}
 		
 		const sTime: number = new Date().getTime();
-		let output: any;
+		let output;
 
 		try {
 			output = inspect(eval(code));

@@ -61,5 +61,6 @@ export const cmd: Command = {
 		return message.channel.send(embed);
 	},
 	help: 'Search for your favorite anime !',
-	usage: 'm.anime <anime name>'
+	usage: 'm.anime <anime name>',
+	catg: 'anime'
 };

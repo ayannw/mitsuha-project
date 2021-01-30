@@ -1,7 +1,7 @@
 import { Message } from 'discord.js';
 
 export function getMember(message: Message, args: string[]): any {
-  let member: any;
+  let member;
   const guild = message.guild;
 	
   if(args.length == 0) {

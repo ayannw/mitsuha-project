@@ -6,7 +6,7 @@ import { embedItem as item } from '../../tools/mitsuhaEmbed';
 export const cmd: Command = {
   name: 'whois',
   run: async (client: Client, message: Message, args: string[]): Promise<Message> => {
-  const member: any = getMember(message, args);
+  const member = getMember(message, args);
   if(!member) return message.channel.send('Unable to find the user.');
 
   const user: User = member.user;
@@ -30,6 +30,6 @@ export const cmd: Command = {
   },
   help: 'Shows information about a Discord user/guild member',
   aliases: ['userinfo'],
-  cat: 'Tools',
-  usage: 'm.whois | m.whois <@user>'
+  usage: 'm.whois | m.whois <user>',
+  catg: 'tools'
 };

@@ -55,5 +55,6 @@ export const cmd: Command = {
 		return message.channel.send(embed);
 	},
   help: 'Search for your favorite manga !',
-  usage: 'm.manga <manga name>'
+	usage: 'm.manga <manga name>',
+	catg: 'anime'
 };

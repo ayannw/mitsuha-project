@@ -1,7 +1,7 @@
 import { createServer, IncomingMessage, ServerResponse } from 'http';
 import { success } from '@ayanthedev/colorlogs';
 
-export function start(): void{
+export function start(): void {
   const port = 6969;
   const server = createServer((request: IncomingMessage, response: ServerResponse) => {
     response.end('Online.');

@@ -5,8 +5,8 @@ import { embedItem } from '../../tools/mitsuhaEmbed';
 
 export const cmd: Command = {
 	name: 'help',
-	run: (client: Client, message: Message, args: Array<any>) => {
-		let command: any;
+	run: (client: Client, message: Message, args: string[]) => {
+		let command;
 		const embed: MessageEmbed = new MessageEmbed()
 			.setColor('RANDOM')
 			.setFooter('Requested by ' + message.author.tag, message.author.displayAvatarURL())
@@ -44,5 +44,6 @@ export const cmd: Command = {
 	},
 	help: 'Shows a list of all commands or describes a command',
 	aliases: ['cmds', 'commandlist', 'cmdlist'],
-	usage: 'm.help | m.help <command>'
+	usage: 'm.help | m.help <command>',
+	catg: 'general'
 };

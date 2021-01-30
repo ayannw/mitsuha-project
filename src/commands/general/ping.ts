@@ -11,5 +11,6 @@ export const cmd: Command = {
   },
   help: 'Check my latency & heartbeat',
   aliases: ['pong', 'latency'],
-  usage: 'm.ping'
+  usage: 'm.ping',
+  catg: 'general'
 };
