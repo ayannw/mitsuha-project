@@ -4,9 +4,9 @@
   "description": "Multi-purpose Discord bot.",
   "main": "build/main.js",
   "scripts": {
-    "test": "nodemon build/main",
+    "test": "pm2-dev build/main.js",
     "build": "tsc -b",
-    "start": "yarn build && node build/main",
+    "start": "yarn build && pm2 start build/main.js",
     "lint": "eslint ./src/ --ext .ts",
     "lint-fix": "eslint ./src/ --ext .ts --fix"
   },
@@ -25,7 +25,7 @@
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.1",
     "eslint": "^7.19.0",
-    "nodemon": "^2.0.7",
+    "pm2": "^4.5.4",
     "typescript": "^4.2.0-dev.20210201"
   }
 }

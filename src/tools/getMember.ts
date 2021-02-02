@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Message } from 'discord.js';
 
 export function getMember(message: Message, args: string[]): any {

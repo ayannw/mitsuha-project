@@ -1,5 +1,4 @@
 import * as logger from '@ayanthedev/colorlogs';
-import { Collection } from 'discord.js';
 import { sync } from 'glob';
 import { resolve } from 'path';
 
@@ -7,7 +6,8 @@ logger.warn('loading commands ...');
 
 const s: number = new Date().getTime();
 
-const cmds: Collection<string, any> = new Collection();
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const cmds: Map<string, any> = new Map();
 const path: string = process.cwd() + '/build/commands/';
 
 sync(path + '**/*.*').forEach((file) => {
