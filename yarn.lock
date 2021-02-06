@@ -2075,10 +2075,10 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-typescript@^4.2.0-dev.20210204:
-  version "4.2.0-dev.20210204"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.0-dev.20210204.tgz#a8670f992d916121da3c455833d43a17950d35f9"
-  integrity sha512-mskEzzg8xT6dqZmmRvV27Ktabr79FxJ/nWhSVW2ERkuZHk//IeBkLdXGCUAbB170uAGMr8Izk4U/Lxl0EvRnaA==
+typescript@^4.2.0-dev.20210205:
+  version "4.2.0-dev.20210205"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.0-dev.20210205.tgz#6031ff109e899bebb07f731f2c8f750027baedea"
+  integrity sha512-c3Led42WnM1kgBsAZxlelxre9ApMjC3CLk+QOVyC37JWkg0PgbHrPabM3w/+s38jwPGLKcK9GdNM97j/4YBVMw==
 
 unpipe@1.0.0:
   version "1.0.0"
