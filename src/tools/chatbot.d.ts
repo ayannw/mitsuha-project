@@ -1,0 +1,1 @@
+export function chatbot(text: string): string;

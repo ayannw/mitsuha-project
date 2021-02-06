@@ -19,6 +19,9 @@ export const cmd: Command = {
 		if(message.content.startsWith(prefix+'eval')){
 			code = message.content.split(prefix+'eval')[1];
 		}
+		if(message.content.startsWith(prefix+'e')){
+			code = message.content.split(prefix+'e')[1];
+		}
 		
 		const sTime: number = new Date().getTime();
 		let output;
@@ -42,6 +45,6 @@ export const cmd: Command = {
 
 		return message.channel.send(m);
 	},
-	aliases: ['ev'],
+	aliases: ['ev', 'e'],
 	ownerOnly: true
 };
