@@ -7,7 +7,6 @@ import { Client, Message } from 'discord.js';
 import { commands } from './handlers/command';
 import { bgBlue, bgGreen } from 'colorette';
 import { draw } from './tools/drawMitsuha';
-
 const client: Client = new Client();
 
 function start(): void {
@@ -18,7 +17,9 @@ function start(): void {
 }
 
 client.on('message', (message: Message): void => {
-  if(!message.channel) return;
+  if(!message.guild) return;
+  if(message.author.bot) return;
+
   logger.info(bgBlue(message.guild.name) + bgGreen(message.author.tag));
   message.content.split('\n').forEach((line) => {
     logger.info(line);
@@ -52,6 +53,7 @@ client.on('message', (message: Message): void => {
 
 client.once('ready', (): void => {
   logger.success(client.user.tag + ' is online');
+  client.user.setActivity('m.help', { type: 'STREAMING' });
   const eTime: number = new Date().getTime();
   logger.info('took ' + (eTime - sTime) + 'ms to boot up');
 });

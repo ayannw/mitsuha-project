@@ -1,1 +1,1 @@
-export function chatbot(text: string): string;
+export function chatbot(text: string): never;
