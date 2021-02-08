@@ -19,6 +19,7 @@
     "alexa-bot-api": "^0.2.1",
     "discord.js": "^12.5.1",
     "glob": "^7.1.6",
+    "nekos.life": "^2.0.7",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {

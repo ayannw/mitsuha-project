@@ -17,7 +17,6 @@ function start(): void {
 }
 
 client.on('message', (message: Message): void => {
-  if(!message.guild) return;
   if(message.author.bot) return;
 
   logger.info(bgBlue(message.guild.name) + bgGreen(message.author.tag));
@@ -34,16 +33,16 @@ client.on('message', (message: Message): void => {
     commands.forEach(command => {
       if(command.cmd.name == cmd){
         return commands.get(command.cmd.name).cmd.run(client, message, args);
-        }
+      }
 
-        if(command.cmd.aliases){
-          command.cmd.aliases.forEach((alias) => {
-            if(alias == cmd){
-              return commands.get(command.cmd.name).cmd.run(client, message, args);
-            }
-          });
-        }
-      });
+      if(command.cmd.aliases){
+         command.cmd.aliases.forEach((alias) => {
+          if(alias == cmd){
+            return commands.get(command.cmd.name).cmd.run(client, message, args);
+          }
+        });
+      }
+    });
     } catch(err) {
       logger.error(err);
       logger.error('unable to find/run command: ' + cmd);
@@ -53,7 +52,7 @@ client.on('message', (message: Message): void => {
 
 client.once('ready', (): void => {
   logger.success(client.user.tag + ' is online');
-  client.user.setActivity('m.help', { type: 'STREAMING' });
+  client.user.setActivity(config.prefix + 'help', { type: 'STREAMING' });
   const eTime: number = new Date().getTime();
   logger.info('took ' + (eTime - sTime) + 'ms to boot up');
 });
