@@ -8,7 +8,7 @@ const kitsuLogo = 'https://avatars1.githubusercontent.com/u/7648832?s=200&v=4';
 
 export const cmd: Command = {
 	name: 'manga',
-	run: async (client: Client, message: Message, args: string[]) => {
+	run: async (client: Client, message: Message, args: string[]): Promise<Message> => {
 		if(!args[0])  return message.channel.send('Please input a valid manga name.');
 		const mangaName: string = encodeURI(args.join(' '));
 		const sTime: number = new Date().getTime();

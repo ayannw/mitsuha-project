@@ -5,7 +5,7 @@ import { embedItem } from '../../tools/mitsuhaEmbed';
 
 export const cmd: Command = {
 	name: 'help',
-	run: (client: Client, message: Message, args: string[]) => {
+	run: (client: Client, message: Message, args: string[]): Promise<Message> => {
 		let command;
 		const embed: MessageEmbed = new MessageEmbed()
 			.setColor('RANDOM')
