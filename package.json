@@ -8,7 +8,8 @@
     "build": "tsc -b",
     "start": "yarn build && pm2 start build/main.js",
     "lint": "eslint ./src/ --ext .ts",
-    "lint-fix": "eslint ./src/ --ext .ts --fix"
+    "lint-fix": "eslint ./src/ --ext .ts --fix",
+    "stop": "pm2 stop 0"
   },
   "repository": "https://github.com/theRealAyan/mitsuha-project",
   "author": "theRealAyan <ayanispro420@gmail.com>",
