@@ -9,7 +9,7 @@ export function getMember(message: Message, args: string[]): any {
 		return guild.members.cache.get(message.author.id);
   } else {
 		const arg: string = args[0];
-		member = message.mentions.users.first()
+		member = message.mentions.members.first()
 			|| guild.members.cache.get(arg)
 			|| guild.members.cache.find(
 			(m) => m.user.username == arg
