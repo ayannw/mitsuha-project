@@ -1,20 +1,12 @@
 export function getTime(int: number): string {
 
-  const date = new Date(int*1000);
-  const days = date.getUTCDate() - 1,
-    hours = date.getUTCHours(),
-    minutes = date.getUTCMinutes(),
-    seconds = date.getUTCSeconds(),
-    milliseconds = date.getUTCMilliseconds();
+  let totalSeconds = (int / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  totalSeconds %= 86400;
+  const hours = Math.floor(totalSeconds / 3600);
+  totalSeconds %= 3600;
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = Math.floor(totalSeconds % 60);
+  return `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
 
-  const segments = [];
-
-  if (days > 0) segments.push(days + ' day' + ((days == 1) ? '' : 's'));
-  if (hours > 0) segments.push(hours + ' hour' + ((hours == 1) ? '' : 's'));
-  if (minutes > 0) segments.push(minutes + ' minute' + ((minutes == 1) ? '' : 's'));
-  if (seconds > 0) segments.push(seconds + ' second' + ((seconds == 1) ? '' : 's'));
-  if (milliseconds > 0) segments.push(milliseconds + ' ms' + ((seconds == 1) ? '' : 's'));
-  const dateString = segments.join(', ');
-
-  return dateString;
 }
