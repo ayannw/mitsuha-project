@@ -11,8 +11,8 @@
     "lint-fix": "eslint ./src/ --ext .ts --fix",
     "stop": "pm2 stop 0"
   },
-  "repository": "https://github.com/theRealAyan/mitsuha-project",
-  "author": "theRealAyan <ayanispro420@gmail.com>",
+  "repository": "https://github.com/ayannw/mitsuha-project",
+  "author": "Ayan <ayanispro420@gmail.com>",
   "license": "MIT",
   "private": "false",
   "dependencies": {
