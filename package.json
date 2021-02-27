@@ -1,35 +1,27 @@
 {
   "name": "mitsuha",
-  "version": "1.2.0",
+  "version": "1.3.0-dev",
   "description": "Multi-purpose Discord bot.",
-  "main": "build/main.js",
-  "scripts": {
-    "test": "pm2-dev build/main.js",
-    "build": "tsc -b",
-    "start": "yarn build && pm2 start build/main.js",
-    "lint": "eslint ./src/ --ext .ts",
-    "lint-fix": "eslint ./src/ --ext .ts --fix",
-    "stop": "pm2 stop 0"
-  },
-  "repository": "https://github.com/ayannw/mitsuha-project",
-  "author": "Ayan <ayanispro420@gmail.com>",
+  "main": "dist/Mitsuha.js",
+  "repository": "https://github.com/ayannw/mitsuha-project.git",
+  "author": "Ayan <https://github.com/ayannw>",
   "license": "MIT",
-  "private": "false",
+  "private": false,
+  "imports": {
+  	"#lib/logger": "./dist/lib/logger.js"
+  },
+  "scripts": {
+    "test": "nodemon .",
+    "build": "tsc -b src",
+    "watch": "tsc -b src -W",
+    "refresh": "rm -rf dist ; yarn build"
+  },
   "dependencies": {
-    "@ayanthedev/colorlogs": "^1.3.0",
-    "alexa-bot-api": "^0.2.1",
-    "discord.js": "^12.5.1",
-    "glob": "^7.1.6",
-    "nekos.life": "^2.0.7",
-    "node-fetch": "^2.6.1"
+    "colorette": "^1.2.2",
+    "dayjs": "^1.10.4",
+    "discord.js": "^12.5.1"
   },
   "devDependencies": {
-    "@types/glob": "^7.1.3",
-    "@types/node": "^14.14.27",
-    "@typescript-eslint/eslint-plugin": "^4.14.2",
-    "@typescript-eslint/parser": "^4.15.0",
-    "eslint": "^7.20.0",
-    "pm2": "^4.5.4",
-    "typescript": "^4.2.0-insiders.20210210"
+    "@types/node": "^14.14.31"
   }
 }
