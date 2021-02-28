@@ -8,15 +8,19 @@
   "license": "MIT",
   "private": false,
   "imports": {
-  	"#lib/logger": "./dist/lib/logger.js"
+    "#lib/logger": "./dist/lib/logger.js",
+    "~/*": "./dist/*.js"
   },
+  "type": "module",
   "scripts": {
-    "test": "nodemon .",
+    "start": "nodemon --es-module-specifier-resolution=node .",
     "build": "tsc -b src",
     "watch": "tsc -b src -W",
     "refresh": "rm -rf dist ; yarn build"
   },
   "dependencies": {
+    "@sapphire/framework": "^1.0.0-alpha.11",
+    "@sapphire/utilities": "^1.4.5",
     "colorette": "^1.2.2",
     "dayjs": "^1.10.4",
     "discord.js": "^12.5.1"

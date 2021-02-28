@@ -4,6 +4,13 @@ import * as logger from '#lib/logger';
 
 const client = new Client();
 
-client.once('ready', () => logger.success('k'));
+const start = async () => {
+	console.clear();
+	return await client.login(tokens.bot);
+}
 
-client.login(tokens.bot);
+client.once('ready', () => logger.success('k'));
+start();
+
+
+export default client;

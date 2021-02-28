@@ -1,5 +1,5 @@
-import * as d from 'dayjs';
 import * as c from 'colorette';
+import dayjs from 'dayjs';
 
 const logTypes = {
 	info: c.blue(' INFO     '),
@@ -9,11 +9,11 @@ const logTypes = {
 }
 
 const format = (text: string, logType: string, _color?: string): void => {
-	const time = d().format('HH:mm:ss:SSS');
+	const time = dayjs().format('HH:mm:ss:SSS');
 	const color = _color || 'white';
-	const out = eval("c.dim(time) + logTypes."
+	const out = eval("c.dim(time) + c.bold(logTypes."
 				+ logType
-				+" + text")
+				+") + text")
 	
 	return console.log(out);
 }

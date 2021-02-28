@@ -16,6 +16,49 @@
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
+"@sapphire/discord-utilities@^2.0.4", "@sapphire/discord-utilities@^2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@sapphire/discord-utilities/-/discord-utilities-2.0.5.tgz#7d1d4cec01f09866c70991e67fba99d40d94176d"
+  integrity sha512-1/8oylkx5PTzR4yfi41E8NqxNYGJmShHuJDj3wGiGxOm95EzfA22mvePsPhiZdduJ+ARgL1aRy5bujArmfUzhg==
+  dependencies:
+    twemoji-parser "^13.0.0"
+
+"@sapphire/discord.js-utilities@^1.4.3":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@sapphire/discord.js-utilities/-/discord.js-utilities-1.5.0.tgz#80249d69640372a1e0762777ced68c4178cc948a"
+  integrity sha512-AuQA4ej/MSbyIEp8ORVcdYVJi8LyQT0RLdNqMbW/1NUzxfq7H6pPjC5CI9O1ZZppqcmt2iXPYJoN7ABaHHfqWQ==
+  dependencies:
+    "@sapphire/discord-utilities" "^2.0.5"
+
+"@sapphire/framework@^1.0.0-alpha.11":
+  version "1.0.0-alpha.11"
+  resolved "https://registry.yarnpkg.com/@sapphire/framework/-/framework-1.0.0-alpha.11.tgz#5e19e523c8d05e4f1c553c3d1f79a3bf32974598"
+  integrity sha512-dFcWdndN827GfRnWk/2rkOUxwi8ULj/M47uvoZ4jREnUTWDHl7sa5sixCwVZCu0tMBbUOuEMFjm4Dj8SvKIb3A==
+  dependencies:
+    "@sapphire/discord-utilities" "^2.0.4"
+    "@sapphire/discord.js-utilities" "^1.4.3"
+    "@sapphire/pieces" "^1.2.2"
+    "@sapphire/ratelimits" "^1.1.5"
+    "@sapphire/utilities" "^1.4.5"
+    lexure "^0.17.0"
+
+"@sapphire/pieces@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@sapphire/pieces/-/pieces-1.2.2.tgz#d84c11348db21e717b3a5878f48258bb6a284ea9"
+  integrity sha512-DoY+kzTJiaeQDk5qmxaY2uOl6lLYHIFn6JUmHdTnsdhpkiDmE83AXB/ZEY/KRHpLq6kIw28TPnvtDIrW1U1Kzg==
+  dependencies:
+    "@discordjs/collection" "^0.1.6"
+
+"@sapphire/ratelimits@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@sapphire/ratelimits/-/ratelimits-1.1.5.tgz#04bbc9488d890d30e9b6541cab04f26663f97d0f"
+  integrity sha512-7HzQrW3naxZTq1LN0oGzGX/xVDFWMWnfmPA1Z1erEO1DPd3hEo+CD6V/bEd3vWh7/XBAX5L+KMvlenvMQNy3wg==
+
+"@sapphire/utilities@^1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@sapphire/utilities/-/utilities-1.4.5.tgz#ef7e89c31bb51bb738cd04b41681bdba29a6ba1b"
+  integrity sha512-uyz/SzwFRPerrVybRZ0SRKe0WN21HWd87IjGkBD0doe+/SGFGeP19H1YBVX+q8mv629XQCYula2P5JgjuJM4Ug==
+
 "@types/node@^14.14.31":
   version "14.14.31"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
@@ -74,6 +117,11 @@ event-target-shim@^5.0.0:
   resolved "https://registry.yarnpkg.com/event-target-shim/-/event-target-shim-5.0.1.tgz#5d4d3ebdf9583d63a5333ce2deb7480ab2b05789"
   integrity sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==
 
+lexure@^0.17.0:
+  version "0.17.0"
+  resolved "https://registry.yarnpkg.com/lexure/-/lexure-0.17.0.tgz#95c26ee49dc3df5f28e2826b1647eb7569aab12a"
+  integrity sha512-0L8GqFgPW36sLNqxdp2VOOef5Ajpb98kc0Zk4AzE+Yf0xYTDndcT1vpFqwkTdrCCw+FV8DH4mC9NUw0RlARThA==
+
 mime-db@1.46.0:
   version "1.46.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.46.0.tgz#6267748a7f799594de3cbc8cde91def349661cee"
@@ -105,6 +153,11 @@ tweetnacl@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-1.0.3.tgz#ac0af71680458d8a6378d0d0d050ab1407d35596"
   integrity sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==
+
+twemoji-parser@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/twemoji-parser/-/twemoji-parser-13.0.0.tgz#bd9d1b98474f1651dc174696b45cabefdfa405af"
+  integrity sha512-zMaGdskpH8yKjT2RSE/HwE340R4Fm+fbie4AaqjDa4H/l07YUmAvxkSfNl6awVWNRRQ0zdzLQ8SAJZuY5MgstQ==
 
 ws@^7.3.1:
   version "7.4.3"
