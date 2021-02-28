@@ -2,11 +2,13 @@
 	"compilerOptions": {
 		"outDir": "../dist",
 		"target": "ES2020",
+		"module": "ES2020",
 		"moduleResolution": "node",
 		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
 		"paths": {
 			"#lib/*": ["./lib/*"],
-			"~/*": ["./*"]
+			"#root/*": ["./*"]
 		}
 	},
 	"exclude": ["tsconfig.json"]

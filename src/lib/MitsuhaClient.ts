@@ -1,8 +1,13 @@
-import { SapphireClient } from '@sapphire/framework';
-import { Command } from '#lib/interfaces/Command';
-import * as config from '~/config';
+import { Client } from 'discord.js';
+import { commands } from '#lib/handlers/command';
+import { MitsuhaClient as _MitsuhaClient_ } from './interfaces/MitsuhaClient';
+import * as config from '#root/config';
 
-export class MitsuhaClient extends SapphireClient {
-	public commands: Array<Command>;
-	
+export const __MitsuhaClient__ = (client: Client): _MitsuhaClient_ => {
+	let _ = client as _MitsuhaClient_;
+
+	_.commands = commands;
+	_.config = config;
+
+	return _;
 }
