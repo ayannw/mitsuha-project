@@ -8,20 +8,18 @@ import { Stopwatch } from "@sapphire/stopwatch";
 const sw = new Stopwatch();
 logger.warn("loading commands ...");
 
-const cmds: Collection<string, Command> = new Collection();
-const path: string = process.cwd() + "/dist/commands/";
+const getCommands = async () => {
+  const cmds: Map<string, Command> = new Map();
+  const path: string = process.cwd() + "/dist/commands/";
+  glob.sync(path + "**/*.js").forEach(async (file) => {
+    let props = await import(file);
+    props = await props.command;
+    cmds.set(props.name, props);
+  });
+  return cmds;
+};
 
-sw.start();
-glob.sync(path + "**/*.js").forEach(async (file) => {
-  let props = await import(resolve(file));
-  props = props.command;
+console.log(getCommands());
+//logger.success(`└─ loaded ${_cmds.commands.size} commands in ${_cmds.time}`);
 
-  console.log(props);
-  const commandName = props.name;
-  cmds.set(commandName, props);
-});
-
-console.log(cmds);
-logger.success(`└─ loaded ${cmds.size} commands in ${sw.stop().toString()}`);
-
-export const commands = cmds;
+export const commands = 69;

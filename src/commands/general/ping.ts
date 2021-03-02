@@ -1,6 +1,6 @@
 import { Command } from "#lib/interfaces/Command";
 import { Message } from "discord.js";
-import { MitsuhaClient } from "#lib/interfaces/MitsuhaClient";
+import { MitsuhaClient } from "#lib/MitsuhaClient";
 
 export const command: Command = {
   name: "ping",

@@ -1,6 +1,6 @@
 import { Client } from "discord.js";
 import { tokens } from "./config";
-import { __MitsuhaClient__ } from "#lib/MitsuhaClient";
+import { MitsuhaClient } from "#lib/MitsuhaClient";
 import * as logger from "#lib/logger";
 
 const _client = new Client({
@@ -9,7 +9,7 @@ const _client = new Client({
   },
 });
 
-const client = __MitsuhaClient__(_client);
+const client: MitsuhaClient = new MitsuhaClient(_client).__client;
 
 const start = async () => {
   return await client.login(tokens.bot);
