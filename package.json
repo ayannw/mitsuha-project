@@ -10,12 +10,13 @@
   "imports": {
     "#root/*": "./dist/*.js",
     "#lib/logger": "./dist/lib/logger.js",
-    "#lib/MitsuhaClient": "./dist/lib/MitsuhaClient",
-    "#lib/handlers/*": "./dist/lib/handlers/*"
+    "#lib/MitsuhaClient": "./dist/lib/MitsuhaClient.js",
+    "#lib/handlers/*": "./dist/lib/handlers/*.js",
+    "#lib/utils/*": "./dist/lib/utils/*.js"
   },
   "type": "module",
   "scripts": {
-    "start": "nodemon --es-module-specifier-resolution=node . --unhandled-rejections=strict",
+    "start": "nodemon --es-module-specifier-resolution=node .",
     "build": "tsc -b src",
     "watch": "tsc -b src -W",
     "refresh": "rm -rf dist ; yarn build"

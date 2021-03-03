@@ -6,7 +6,7 @@ import { Collection } from "discord.js";
 import { readdir } from "fs";
 
 const _getCommands = async () => {
-  const cmds: Collection<string, Command> = new Collection();
+  const cmds: Map<string, Command> = new Map();
   const path: string = process.cwd() + "/dist/commands/";
 
   const commands = await new Promise((resolve, reject) =>
