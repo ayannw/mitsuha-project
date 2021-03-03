@@ -15,7 +15,7 @@
   },
   "type": "module",
   "scripts": {
-    "start": "nodemon --es-module-specifier-resolution=node .",
+    "start": "nodemon --es-module-specifier-resolution=node . --unhandled-rejections=strict",
     "build": "tsc -b src",
     "watch": "tsc -b src -W",
     "refresh": "rm -rf dist ; yarn build"
@@ -24,8 +24,7 @@
     "@sapphire/stopwatch": "^1.0.5",
     "colorette": "^1.2.2",
     "dayjs": "^1.10.4",
-    "discord.js": "^12.5.1",
-    "glob": "^7.1.6"
+    "discord.js": "^12.5.1"
   },
   "devDependencies": {
     "@types/glob": "^7.1.3",

@@ -1,25 +1,35 @@
-import * as logger from "#lib/logger";
-import glob from "glob";
+// @ts-nocheck
+
 import { resolve } from "path";
 import { Command } from "#lib/interfaces/Command";
 import { Collection } from "discord.js";
-import { Stopwatch } from "@sapphire/stopwatch";
+import { readdir } from "fs";
 
-const sw = new Stopwatch();
-logger.warn("loading commands ...");
-
-const getCommands = async () => {
-  const cmds: Map<string, Command> = new Map();
+const _getCommands = async () => {
+  const cmds: Collection<string, Command> = new Collection();
   const path: string = process.cwd() + "/dist/commands/";
-  glob.sync(path + "**/*.js").forEach(async (file) => {
-    let props = await import(file);
-    props = await props.command;
-    cmds.set(props.name, props);
-  });
+
+  const commands = await new Promise((resolve, reject) =>
+    readdir(path, (e, ls) =>
+      e ? reject(e) : resolve(ls.map((i) => `${path}${i}/`))
+    )
+  )
+    .then((ls) =>
+      Promise.all(
+        ls.map(
+          (path) =>
+            new Promise((resolve, reject) =>
+              readdir(path, (e, ls) =>
+                e ? reject(e) : resolve(ls.map((i) => `${path}${i}`))
+              )
+            )
+        )
+      ).then((lists) => lists.reduce((a, b) => [...a, ...b], []))
+    )
+    .then((list) => Promise.all(list.map((l) => import(l))));
+  commands.forEach(({ command }) => cmds.set(command.name, command));
+
   return cmds;
 };
 
-console.log(getCommands());
-//logger.success(`└─ loaded ${_cmds.commands.size} commands in ${_cmds.time}`);
-
-export const commands = 69;
+export const commands = _getCommands();
