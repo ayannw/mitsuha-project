@@ -20,12 +20,11 @@ export const execMessage = (client: MitsuhaClient, message: Message): any => {
 
   const m = message.content;
 
-  if (
-    m.startsWith(client.config.prefix) ||
-    m.startsWith(client.config.prefix.toUpperCase())
-  ) {
+  if (m.toLowerCase().startsWith(client.config.prefix)) {
     swp = true;
     str = m.toLowerCase().replace(client.config.prefix, "");
+  } else {
+    return false;
   }
 
   arr = str.split(/ +/);

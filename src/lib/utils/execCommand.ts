@@ -10,9 +10,19 @@ export const execCommand = async (
 ) => {
   const c = await client.commands;
   try {
-    return c
-      .find((x) => x.name == cmd || new Set(x.aliases).has(cmd))
-      .run(client, message, args);
+    let _: any = c.find((x) => x.name == cmd || new Set(x.aliases).has(cmd));
+
+    if (_.ownerOnly) {
+      client.config.owners.forEach((u) => {
+        if (message.author.id === u) {
+          return _.run(client, message, args);
+        } else {
+          return message.channel.send("You don't own me");
+        }
+      });
+    } else {
+      return _.run(client, message, args);
+    }
   } catch (err) {
     return error(err);
   }
