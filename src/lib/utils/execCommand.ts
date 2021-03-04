@@ -8,9 +8,9 @@ export const execCommand = async (
   cmd: string,
   args?: string[]
 ) => {
-  let c = await client.commands;
+  const c = await client.commands;
   try {
-    return c.get(cmd).run(client, message, args).run(client, message, args);
+    return c.get(cmd).run(client, message, args);
   } catch (err) {
     return error(err);
   }

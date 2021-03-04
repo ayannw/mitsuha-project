@@ -28,7 +28,7 @@ client.on("message", (message: Message) => {
     return execCommand(client, message, res.cmd, res.args);
 });
 
-client.once("ready", async () => {
+client.once("ready", () => {
   logger.success("online, logged in as: " + client.user.tag);
   logger.info("users: " + client.users.cache.size);
   logger.info("guilds: " + client.guilds.cache.size);

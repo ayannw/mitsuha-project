@@ -6,7 +6,7 @@ import { info } from "../logger";
 export const execMessage = (client: MitsuhaClient, message: Message): any => {
   if (message.channel.type != "text") return;
 
-  let swp: boolean = false;
+  let swp = false;
   let str: string;
   let arr: string[];
   let cmd: string;

@@ -6,7 +6,7 @@ import { Collection } from "discord.js";
 import { readdir } from "fs";
 
 const _getCommands = async () => {
-  const cmds: Map<string, Command> = new Map();
+  const cmds: Collection<string, Command> = new Collection();
   const path: string = process.cwd() + "/dist/commands/";
 
   const commands = await new Promise((resolve, reject) =>
@@ -32,4 +32,33 @@ const _getCommands = async () => {
   return cmds;
 };
 
+const _commandMap = async () => {
+  const cmap = {
+    General: new Map(),
+    Tools: new Map(),
+    Moderation: new Map(),
+    Uncategorized: new Map(),
+  };
+  const allc = await _getCommands();
+
+  allc.forEach((c) => {
+    if (c.category) {
+      switch (c.category) {
+        case "general":
+          cmap.General.set(c);
+          break;
+        case "tools":
+          cmap.Tools.set(c);
+          break;
+        case "moderation":
+          cmap.Moderation.set(c);
+          break;
+      }
+    } else {
+      cmap.get("Uncategorized").set(c);
+    }
+  });
+};
+
 export const commands = _getCommands();
+export const commandMap = _commandMap()!;
