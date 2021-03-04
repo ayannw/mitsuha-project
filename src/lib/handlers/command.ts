@@ -37,6 +37,7 @@ const _commandMap = async () => {
     General: new Map(),
     Tools: new Map(),
     Moderation: new Map(),
+    Owner: new Map(),
     Uncategorized: new Map(),
   };
   const allc = await _getCommands();
@@ -53,6 +54,8 @@ const _commandMap = async () => {
         case "moderation":
           cmap.Moderation.set(c);
           break;
+        case "owner":
+          cmap.Owner.set(c);
       }
     } else {
       cmap.get("Uncategorized").set(c);

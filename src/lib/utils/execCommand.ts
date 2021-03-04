@@ -10,7 +10,9 @@ export const execCommand = async (
 ) => {
   const c = await client.commands;
   try {
-    return c.get(cmd).run(client, message, args);
+    return c
+      .find((x) => x.name == cmd || new Set(x.aliases).has(cmd))
+      .run(client, message, args);
   } catch (err) {
     return error(err);
   }

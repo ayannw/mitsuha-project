@@ -15,15 +15,10 @@ const start = async () => {
 };
 
 client.on("message", (message: Message) => {
-  logger.info(
-    // @ts-ignore
-    `(${message.author.tag}) -> #${message.channel.name}: ${message.content}`
-  );
-
   if (message.author.bot) return;
-  if (!message.content.startsWith(client.config.prefix)) return;
   const res = execMessage(client, message);
 
+  if (res == false) return;
   if (res.startsWithPrefix)
     return execCommand(client, message, res.cmd, res.args);
 });

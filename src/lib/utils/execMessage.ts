@@ -4,7 +4,13 @@ import { Command } from "../interfaces/Command";
 import { info } from "../logger";
 
 export const execMessage = (client: MitsuhaClient, message: Message): any => {
-  if (message.channel.type != "text") return;
+  if (message.channel.type != "text") return false;
+  if (message.author.bot) return false;
+
+  info(
+    // @ts-ignore
+    `(${message.author.tag}) -> #${message.channel.name}: ${message.content}`
+  );
 
   let swp = false;
   let str: string;
@@ -14,10 +20,12 @@ export const execMessage = (client: MitsuhaClient, message: Message): any => {
 
   const m = message.content;
 
-  if (!m.startsWith(client.config.prefix)) return;
-  if (m.startsWith(client.config.prefix)) {
+  if (
+    m.startsWith(client.config.prefix) ||
+    m.startsWith(client.config.prefix.toUpperCase())
+  ) {
     swp = true;
-    str = m.replace(client.config.prefix, "");
+    str = m.toLowerCase().replace(client.config.prefix, "");
   }
 
   arr = str.split(/ +/);
@@ -26,7 +34,7 @@ export const execMessage = (client: MitsuhaClient, message: Message): any => {
 
   return {
     startsWithPrefix: swp,
-    cmd: cmd,
+    cmd: cmd.toLowerCase(),
     args: args,
   };
 };

@@ -11,5 +11,6 @@ export const command: Command = {
       m.edit(`Pong! ${String(ping)}ms.`);
     });
   },
+  aliases: ["pong", "latency"],
   category: "general",
 };
