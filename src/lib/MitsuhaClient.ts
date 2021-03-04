@@ -6,12 +6,12 @@ import { Command } from "./interfaces/Command";
 import { commands, commandMap } from "./handlers/command";
 import { execCommand } from "./utils/execCommand";
 import { totalmem } from "os";
-import { fromMS, fromS } from "./utils/getTime";
+import { updateStats } from "./utils/updateClientStats";
 
 export interface MitsuhaClient extends Client {
   type: string;
   commands: any;
-  commandMap: Map<any, any>;
+  commandMap: any[];
   config: any;
 }
 

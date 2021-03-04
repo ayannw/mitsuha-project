@@ -33,33 +33,34 @@ const _getCommands = async () => {
 };
 
 const _commandMap = async () => {
-  const cmap = {
-    General: new Map(),
-    Tools: new Map(),
-    Moderation: new Map(),
-    Owner: new Map(),
-    Uncategorized: new Map(),
-  };
+  const cmap = [
+    {
+      name: "general",
+      commands: new Map(),
+    },
+    {
+      name: "tools",
+      commands: new Map(),
+    },
+    {
+      name: "moderation",
+      commands: new Map(),
+    },
+    {
+      name: "system",
+      commands: new Map(),
+    },
+    {
+      name: "owner",
+      commands: new Map(),
+    },
+  ];
   const allc = await _getCommands();
 
   allc.forEach((c) => {
-    if (c.category) {
-      switch (c.category) {
-        case "general":
-          cmap.General.set(c);
-          break;
-        case "tools":
-          cmap.Tools.set(c);
-          break;
-        case "moderation":
-          cmap.Moderation.set(c);
-          break;
-        case "owner":
-          cmap.Owner.set(c);
-      }
-    } else {
-      cmap.get("Uncategorized").set(c);
-    }
+    cmap.forEach((m) => {
+      if (c.category === m.name) return m.commands.set(c.name, c);
+    });
   });
 };
 
