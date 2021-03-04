@@ -38,7 +38,7 @@ export const command: Command = {
       .forEach((line) => info(line));
 
 	if (output.length >= 2000) return message.channel.send("Output too long");
-    if (output.indexOf(client.config.tokens.bot) > -1) return message.channel.send("No.");
+    if (String(output).includes(client.config.tokens.bot)) return message.channel.send("No.");
 
     output = "```js\n" + output + "```";
     d =
