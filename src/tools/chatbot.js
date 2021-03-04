@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const alexa = require('alexa-bot-api');
+const alexa = require("alexa-bot-api");
 const ai = new alexa();
 
 exports.chatbot = async (text) => {
@@ -8,11 +8,9 @@ exports.chatbot = async (text) => {
 
   try {
     reply = await ai.getReply(text);
-  } catch(err) {
-    reply = 'An unexpected error popped up. ```js\n' 
-      + err 
-      + '```';
+  } catch (err) {
+    reply = "An unexpected error popped up. ```js\n" + err + "```";
   }
 
   return await reply;
-}
+};
