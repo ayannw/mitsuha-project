@@ -22,18 +22,15 @@ export const execMessage = (client: MitsuhaClient, message: Message): any => {
 
     if (m.toLowerCase().startsWith(client.config.prefix)) {
         swp = true;
-        str = m
-            .toLowerCase()
-            .replace(client.config.prefix, '')
-            .split(/ +/)
-            .join(' ');
+        str = m.replace(client.config.regexPrefix, '').split(/ +/).join(' ');
     } else {
         return false;
     }
 
-    arr = str.split(/ +/);
-    arr[0] == '' ? (cmd = arr[1]) : (cmd = arr[0]);
+    arr = str.split(' ');
+    cmd = arr[0];
     args = arr.join(' ').replace(cmd, '').split(' ');
+    args.shift();
 
     return {
         startsWithPrefix: swp,
