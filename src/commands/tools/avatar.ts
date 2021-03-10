@@ -1,16 +1,15 @@
 import { MitsuhaClient } from '#lib/MitsuhaClient';
 import { Command } from '#lib/interfaces/Command';
 import { User, Message, MessageEmbed } from 'discord.js';
-import { getMember } from '#lib/utils/getMember';
+import { getUser } from '#lib/utils/getUser';
 
 export const command: Command = {
     name: 'avatar',
     help: "View somebody's avatar.",
-    run: (client: MitsuhaClient, message: Message, args: string[]) => {
-        const member = getMember(message, args);
-        if (!member) return message.channel.send('Unable to find the user.');
+    run: async (client: MitsuhaClient, message: Message, args: string[]) => {
+        const user = await getUser(client, message, args[0]);
+        if (!user) return message.channel.send('Unable to find the user.');
 
-        const user: User = member.user;
         const embed: MessageEmbed = new MessageEmbed()
             .setColor(client.config.colors.normal)
             .setAuthor(user.tag, user.displayAvatarURL({ dynamic: true }))
