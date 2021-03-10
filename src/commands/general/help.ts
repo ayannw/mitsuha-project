@@ -30,7 +30,7 @@ export const command: Command = {
             },
         ];
         const allc = await client.commands;
-        allc.forEach((c) => {
+        allc.sort().forEach((c) => {
             cmap.forEach((m) => {
                 if (c.category === m.name.toLowerCase())
                     return m.commands.set(c.name, c);
@@ -52,7 +52,18 @@ export const command: Command = {
             list.push(str);
         });
 
-        return message.channel.send(list.join(''));
+        const embed: MessageEmbed = new MessageEmbed()
+            .setAuthor('Displaying help', client.user.displayAvatarURL())
+            .setDescription(list.join(''))
+            .setColor(client.config.colors.normal)
+            .setFooter(
+                'Requested by ' + message.author.tag,
+                message.author.displayAvatarURL({
+                    dynamic: true,
+                })
+            );
+
+        return message.channel.send(embed);
     },
     category: 'general',
     aliases: ['list'],
