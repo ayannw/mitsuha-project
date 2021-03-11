@@ -7,6 +7,7 @@
 <a href="https://lgtm.com/projects/g/theRealAyan/mitsuha-project/alerts/"><img alt="Total alerts" src="https://img.shields.io/lgtm/alerts/g/theRealAyan/mitsuha-project.svg?logo=lgtm&logoWidth=18"/></a>
 <a href="https://lgtm.com/projects/g/theRealAyan/mitsuha-project/context:javascript"><img alt="Language grade: JavaScript" src="https://img.shields.io/lgtm/grade/javascript/g/theRealAyan/mitsuha-project.svg?logo=lgtm&logoWidth=18"/></a>
 <img src="https://img.shields.io/tokei/lines/github/ayannw/mitsuha-project?logo=github&amp;" alt="Lines of code"/>
+<img src="https://github-size-badge.herokuapp.com/ayannw/mitsuha-project.svg" alt="Size" />
 </p>
 <p>Multi-purpose Discord bot made with Discord.js.</p>
 <p><a href="https://discord.com/oauth2/authorize?client_id=749640517549293729&amp;permissions=205323366&amp;scope=bot">🔗 Invite to server</a> |
